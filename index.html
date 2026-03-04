@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en-KE">
+
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- SEO Description -->
+<meta name="description" content="Gabricon Solutions provides reliable vehicle hire, airport transfers, corporate travel, group transport and cargo handling across Kenya. Clean vehicles, professional drivers and fast booking.">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://carl-ctrl-design.github.io/Gabricon/index.html">
+
+<!-- Robots -->
+ <meta name="robots" content="index, follow">
+	<meta name="author" content="Carl">
+	<!-- Page Title -->
+	<title>GABRICON SOLUTIONS | Home Page</title>
+
+	<!-- Favicon Icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="NewImage/Favic.png">
+	<!-- Google Fonts Css-->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+	<!-- Bootstrap Css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- SlickNav Css -->
+	<link href="css/slicknav.min.css" rel="stylesheet">
+	<!-- Swiper Css -->
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<!-- Font Awesome Icon Css-->
+	<link href="css/all.css" rel="stylesheet" media="screen">
+	<!-- Animated Css -->
+	<link href="css/animate.css" rel="stylesheet">
+	<!-- Magnific Popup Core Css File -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Mouse Cursor Css File -->
+	<link rel="stylesheet" href="css/mousecursor.css">
+	<!-- Main Custom Css -->
+	<link href="css/custom.css" rel="stylesheet" media="screen">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        
+            let currentPage = window.location.pathname.split("/").pop();
+        
+            if(currentPage === ""){
+                currentPage = "index.html";
+            }
+        
+            const menuLinks = document.querySelectorAll(".navbar-nav .nav-link");
+        
+            menuLinks.forEach(link => {
+                let linkPage = link.getAttribute("href");
+        
+                if(linkPage === currentPage){
+                    link.classList.add("active");
+                }
+            });
+        
+        });
+        </script>
+        
+</head>
+<body>
+
+<!-- ===== GABRICON LOADER: GPS PING ROUTE ===== -->
+<div class="preloader" id="preloader" aria-label="Loading">
+  <div class="preloader-card">
+    <img class="preloader-logo" src="NewImage/gabricon_logo_600px.png" alt="Gabricon Solutions Logo">
+
+    <div class="gps-wrap" aria-hidden="true">
+      <div class="map-grid"></div>
+
+      <!-- Route (SVG so it feels “real”) -->
+      <svg class="route-svg" viewBox="0 0 420 90" preserveAspectRatio="none">
+        <!-- faint base route -->
+        <path class="route-base"
+          d="M10,60 C70,20 120,85 180,45 C240,10 300,75 360,35 C385,22 402,28 410,30" />
+        <!-- animated route -->
+        <path class="route-draw"
+          d="M10,60 C70,20 120,85 180,45 C240,10 300,75 360,35 C385,22 402,28 410,30" />
+      </svg>
+
+      <!-- Start pin -->
+      <div class="pin pin-start">
+        <span class="pin-core"></span>
+        <span class="pin-pulse"></span>
+      </div>
+
+      <!-- End pin -->
+      <div class="pin pin-end">
+        <span class="pin-core"></span>
+        <span class="pin-pulse"></span>
+      </div>
+
+      <!-- Moving signal dot -->
+      <div class="signal-dot"></div>
+    </div>
+
+    <div class="preloader-text">
+      <div class="preloader-title">Routing your ride…</div>
+      <div class="preloader-sub">Securing driver & vehicle</div>
+    </div>
+  </div>
+</div>
+<!-- ===== /GABRICON LOADER ===== -->
+
+<style>/* ===== GPS ROUTE LOADER (UNIQUE) ===== */
+  .preloader{
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: #070707;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .6s ease, visibility .6s ease;
+  }
+  
+  /* subtle moving sheen */
+  .preloader::before{
+    content:"";
+    position:absolute;
+    inset:-40%;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(255,54,0,0.18) 0%, rgba(255,54,0,0) 55%),
+      radial-gradient(circle at 70% 60%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 50%);
+    animation: sheen 2.2s ease-in-out infinite alternate;
+    filter: blur(0.5px);
+  }
+  
+  @keyframes sheen{
+    from{ transform: translate3d(-1.5%, -1%, 0) scale(1); opacity: .8; }
+    to{ transform: translate3d(1.5%, 1%, 0) scale(1.02); opacity: 1; }
+  }
+  
+  .preloader-card{
+    position: relative;
+    width: min(520px, 92vw);
+    padding: 26px 22px 22px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+    backdrop-filter: blur(10px);
+    text-align:center;
+    overflow:hidden;
+  }
+  
+  .preloader-logo{
+    width: 170px;
+    height:auto;
+    opacity: .95;
+    transform: translateZ(0);
+  }
+  
+  /* Map / GPS area */
+  .gps-wrap{
+    position: relative;
+    margin: 18px auto 14px;
+    width: 100%;
+    height: 140px;
+    border-radius: 14px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.10);
+    overflow: hidden;
+  }
+  
+  /* “Map grid” */
+  .map-grid{
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+    opacity: .55;
+    transform: translateZ(0);
+  }
+  
+  /* Route SVG */
+  .route-svg{
+    position:absolute;
+    left: 6%;
+    top: 50%;
+    width: 88%;
+    height: 70px;
+    transform: translateY(-50%);
+  }
+  
+  .route-base{
+    fill: none;
+    stroke: rgba(255,255,255,0.16);
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+  
+  .route-draw{
+    fill: none;
+    stroke: rgba(255,54,0,0.95);
+    stroke-width: 3.2;
+    stroke-linecap: round;
+    stroke-dasharray: 520;
+    stroke-dashoffset: 520;
+    animation: drawRoute 1.35s ease-in-out infinite;
+    filter: drop-shadow(0 10px 16px rgba(255,54,0,0.18));
+  }
+  
+  @keyframes drawRoute{
+    0%   { stroke-dashoffset: 520; opacity: .65; }
+    55%  { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: .9; }
+  }
+  
+  /* Pins */
+  .pin{
+    position:absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .pin-start{ left: 10%; top: 62%; }
+  .pin-end{ left: 90%; top: 38%; }
+  
+  .pin-core{
+    position:absolute;
+    inset:0;
+    border-radius: 50%;
+    background: #ff3600;
+    box-shadow: 0 14px 30px rgba(255,54,0,0.28);
+  }
+  
+  .pin-pulse{
+    position:absolute;
+    inset:-12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,54,0,0.65);
+    animation: ping 1.25s ease-out infinite;
+  }
+  
+  @keyframes ping{
+    0%{ transform: scale(0.2); opacity: 0.0; }
+    20%{ opacity: 0.9; }
+    100%{ transform: scale(1.2); opacity: 0; }
+  }
+  
+  /* Moving signal dot (follows the route area visually) */
+  .signal-dot{
+    position:absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(255,255,255,0.18);
+    left: 10%;
+    top: 62%;
+    animation: dotTravel 1.35s ease-in-out infinite;
+  }
+  
+  @keyframes dotTravel{
+    0%   { left: 10%; top: 62%; opacity: .7; transform: scale(0.95); }
+    35%  { left: 33%; top: 44%; opacity: 1; transform: scale(1.1); }
+    60%  { left: 58%; top: 58%; }
+    100% { left: 90%; top: 38%; opacity: .85; transform: scale(1); }
+  }
+  
+  /* Text */
+  .preloader-text{ margin-top: 6px; }
+  .preloader-title{
+    font-size: 15px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.92);
+    letter-spacing: 0.2px;
+  }
+  .preloader-sub{
+    margin-top: 6px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.68);
+    font-weight: 600;
+  }
+  
+  /* Hide state */
+  .preloader.is-hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  /* Small screens */
+  @media (max-width: 576px){
+    .preloader-logo{ width: 150px; }
+    .gps-wrap{ height: 125px; }
+  }
+</style>
+
+<script>
+  (function(){
+    const loader = document.getElementById("preloader");
+    if(!loader) return;
+  
+    // Faster + cleaner: never let loader hang forever
+    const KILL_SWITCH_MS = 4500;
+  
+    function hideLoader(){
+      if(!loader || loader.classList.contains("is-hidden")) return;
+      loader.classList.add("is-hidden");
+      setTimeout(() => loader.remove(), 700);
+    }
+  
+    // Main hide when everything is loaded
+    window.addEventListener("load", () => {
+      // short “cinematic” pause so the animation feels intentional
+      setTimeout(hideLoader, 220);
+    });
+  
+    // Safety fallback
+    setTimeout(hideLoader, KILL_SWITCH_MS);
+  })();
+  </script>
+<!-- ===== GABRICON LOADER END ===== -->
+
+
+<!-- Header Start -->
+<header class="main-header">
+    <div class="header-sticky">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo Start -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="NewImage/gabricon_logo_600px.png" alt="Logo">
+                </a>
+                <!-- Logo End -->
+
+                <!-- Main Menu Start -->
+                <div class="collapse navbar-collapse main-menu">
+                    <div class="nav-menu-wrapper">
+                        <ul class="navbar-nav mr-auto" id="menu">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About Gabricon</a></li>
+                            <li class="nav-item"><a class="nav-link" href="service.html">Our Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="image-gallery.html">Gallery</a></li>                        
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!-- Let’s Start Button Start -->
+                    <div class="header-btn d-inline-flex">
+                        <a href="contact.html" class="btn-default">Book a Vehicle</a>
+                    </div>
+                    <!-- Let’s Start Button End -->
+                </div>
+                <!-- Main Menu End -->
+                <div class="navbar-toggle">
+                    <span class="menu-label">MENU</span>
+                    <span class="menu-bars"></span>
+                </div>
+            </div>
+        </nav>
+        <div class="responsive-menu"></div>
+    </div>
+</header>
+<!-- Header End -->
+
+
+<!-- Hero Section Start -->
+<div class="hero">
+  <div class="hero-section parallaxie">
+
+    <!-- Swiper Slider Start -->
+    <div class="swiper hero-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo2.jpeg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo20.jpeg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo27.jpg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo37.jpg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/photo36.jpg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo8.jpeg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo1.jpg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo7.jpeg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo5.jpeg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo3.jpeg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo4.jpeg');"></div>
+        <div class="swiper-slide" style="background-image:url('NewImage/Photo6.jpeg');"></div>
+      </div>
+    </div>
+    <!-- Swiper Slider End -->
+
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12">
+          <div class="hero-content">
+            <div class="section-title">
+              <h3 class="wow fadeInUp">Gabricon Solutions</h3>
+
+              <h1 class="text-anime-style-3" data-cursor="-opaque">
+                Reliable Vehicle Hire, Airport Transfers & Logistics — Across Kenya
+              </h1>
+
+              <p class="wow fadeInUp" data-wow-delay="0.25s"
+                 style="color:#fff; text-shadow:0 4px 18px rgba(0,0,0,0.7);">
+                From airport pickups and city rides to tours, events, corporate travel and secure cargo handling — we deliver clean vehicles, professional drivers, and dependable service you can trust.
+              </p>
+            </div>
+
+            <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
+              <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book.%0A%0AService%3A%20%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20%0ALuggage%3A%20"
+                 target="_blank" class="btn-default">WhatsApp Booking</a>
+
+              <a href="contact.html" class="btn-default btn-highlighted">Request a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Hero Section End -->
+
+<!-- Swiper JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof Swiper === "undefined") {
+    console.log("Swiper not loaded. Check Swiper JS include.");
+    return;
+  }
+
+  new Swiper(".hero-swiper", {
+    loop: true,
+    effect: "fade",
+    speed: 800,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    allowTouchMove: false
+  });
+});
+</script>
+
+<!-- Swiper CSS -->
+<style>
+  .hero-section{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  .hero-swiper{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  
+  .hero-swiper .swiper-slide{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 10;
+  }
+  </style>
+
+<!-- Hero Section End -->
+
+
+
+<!-- About Us Section Start -->
+<div class="about-us">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- Images -->
+        <div class="col-lg-6">
+          <div class="about-image">
+            <div class="about-img-1">
+              <figure class="reveal">
+                <img src="NewImage/about_img_9.jpeg" alt="Gabricon vehicle hire and chauffeur service">
+              </figure>
+            </div>
+            <div class="about-img-2">
+              <figure class="reveal">
+                <img src="NewImage/about_img_10.jpeg" alt="Gabricon airport transfers and corporate travel">
+              </figure>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Content -->
+        <div class="col-lg-6">
+          <div class="about-content">
+  
+            <div class="section-title">
+              <h3 class="wow fadeInUp">About Us</h3>
+  
+              <h2 class="text-anime-style-3" data-cursor="-opaque">
+                Transport, travel & logistics, delivered with professionalism you can feel
+              </h2>
+  
+              <p class="wow fadeInUp" data-wow-delay="0.25s">
+                Gabricon Solutions provides reliable vehicle hire, airport transfers, group transport, corporate travel and cargo support across Kenya.
+                We prioritize clean, well-maintained vehicles, vetted drivers, clear communication and on-time delivery, so every client feels safe,
+                comfortable and fully in control.
+              </p>
+            </div>
+  
+            <!-- Trust Strip -->
+            <div class="about-proof wow fadeInUp" data-wow-delay="0.35s">
+              <ul class="about-proof-list">
+                <li><strong>Who we serve:</strong> Individuals, families, groups & organizations</li>
+                <li><strong>Coverage:</strong> Nairobi + countrywide operations</li>
+                <li><strong>Support:</strong> Fast response via WhatsApp & phone</li>
+                <li><strong>Standard:</strong> Safety, comfort, punctuality</li>
+              </ul>
+            </div>
+  
+            <!-- About Content Body -->
+            <div class="about-content-body">
+  
+              <div class="about-trusted-booking wow fadeInUp" data-wow-delay="0.5s">
+                <div class="icon-box">
+                  <img src="NewImage/icon-about-trusted-1.svg" alt="Vehicle Hire">
+                </div>
+                <div class="trusted-booking-content">
+                  <h3>Vehicle Hire</h3>
+                  <p>Hourly, daily or long-term hire with a professional driver — clean vehicles, punctual pickups and flexible scheduling.</p>
+                </div>
+              </div>
+  
+              <div class="about-trusted-booking wow fadeInUp" data-wow-delay="0.75s">
+                <div class="icon-box">
+                  <img src="NewImage/icon-about-trusted-2.svg" alt="Corporate Travel">
+                </div>
+                <div class="trusted-booking-content">
+                  <h3>Corporate Travel</h3>
+                  <p>Business-class transport for meetings, site visits and events — reliable coordination, professional presentation and smooth billing.</p>
+                </div>
+              </div>
+  
+              <div class="about-trusted-booking wow fadeInUp" data-wow-delay="1s">
+                <div class="icon-box">
+                  <img src="NewImage/icon-service-3.svg" alt="Airport Transfers">
+                </div>
+                <div class="trusted-booking-content">
+                  <h3>Airport Transfers</h3>
+                  <p>Dependable pickups and comfortable rides to/from JKIA, Wilson and regional airports — coordinated for peace of mind.</p>
+                </div>
+              </div>
+  
+              <div class="about-trusted-booking wow fadeInUp" data-wow-delay="1.25s">
+                <div class="icon-box">
+                  <img src="NewImage/icon-service-4.svg" alt="Cargo Handling & Logistics">
+                </div>
+                <div class="trusted-booking-content">
+                  <h3>Cargo Handling & Logistics</h3>
+                  <p>Secure movement of goods with careful handling, clear updates and reliable delivery across key routes.</p>
+                </div>
+              </div>
+  
+              <div class="about-trusted-booking wow fadeInUp" data-wow-delay="1.5s">
+                <div class="icon-box">
+                  <img src="NewImage/icon-service-5.svg" alt="Special Services">
+                </div>
+                <div class="trusted-booking-content">
+                  <h3>Special Services</h3>
+                  <p>VIP/protocol, event transport and custom requests — planned in advance and executed discreetly and professionally.</p>
+                </div>
+              </div>
+  
+            </div>
+  
+            <!-- CTAs -->
+            <div class="about-content-footer wow fadeInUp" data-wow-delay="1.75s">
+              <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20request%20a%20quote.%0AService%3A%20%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0A" target="_blank" class="btn-default">
+                Get a Quote on WhatsApp
+              </a>
+              <a href="about.html" class="btn-default btn-highlighted">Learn More</a>
+            </div>
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <!-- About Us Section End -->
+  
+  <style>
+  /* About proof strip (move into custom.css when ready) */
+  .about-proof{ margin:18px 0 8px; }
+  .about-proof-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px 18px;
+  }
+  .about-proof-list li{
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+  @media (max-width:768px){
+    .about-proof-list{ grid-template-columns:1fr; }
+  }
+  </style>
+
+
+<!-- Our Services Section Start --> 
+<div class="our-services bg-section" id="services">
+  <div class="container">
+    <div class="row section-row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h3 class="wow fadeInUp">Our Services</h3>
+          <h2 class="text-anime-style-3" data-cursor="-opaque">
+            Transport solutions for everyday trips, groups & organizations
+          </h2>
+          <p class="wow fadeInUp" data-wow-delay="0.25s">
+            Whether you’re travelling solo, moving as a group, hosting guests, running an event, or delivering cargo — we’ll coordinate the vehicle, driver and timing professionally.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Vehicle Hire -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-item wow fadeInUp">
+          <a href="service.html?service=vehicle-hire" class="service-link">
+            <div class="icon-box">
+              <img src="NewImage/icon-about-trusted-1.svg" alt="Vehicle Hire">
+            </div>
+            <div class="service-content">
+              <h3>Vehicle Hire</h3>
+              <p>Hourly, daily or long-term hire with a professional driver — clean vehicles, punctual pickups, flexible schedules.</p>
+              <span class="service-meta">Ideal for: city trips, errands, personal travel</span>
+            </div>
+            <div class="service-footer">
+              <img src="images/arrow-white.svg" alt="View service">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Corporate & Executive Travel -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-item wow fadeInUp" data-wow-delay="0.25s">
+          <a href="service.html?service=corporate-travel" class="service-link">
+            <div class="icon-box">
+              <img src="NewImage/icon-about-trusted-2.svg" alt="Corporate & Executive Travel">
+            </div>
+            <div class="service-content">
+              <h3>Corporate & Executive</h3>
+              <p>Professional transport for meetings, site visits and guests — reliable coordination, polished service and smooth billing.</p>
+              <span class="service-meta">Ideal for: businesses, NGOs, VIP guests</span>
+            </div>
+            <div class="service-footer">
+              <img src="images/arrow-white.svg" alt="View service">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Airport Transfers -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-item wow fadeInUp" data-wow-delay="0.5s">
+          <a href="service.html?service=airport-transfers" class="service-link">
+            <div class="icon-box">
+              <img src="NewImage/icon-service-3.svg" alt="Airport Transfers">
+            </div>
+            <div class="service-content">
+              <h3>Airport Transfers</h3>
+              <p>Comfortable, on-time pickups and drop-offs to/from JKIA, Wilson and regional airports — travel stress-free.</p>
+              <span class="service-meta">Ideal for: arrivals, departures, hotel transfers</span>
+            </div>
+            <div class="service-footer">
+              <img src="images/arrow-white.svg" alt="View service">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cargo & Logistics -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-item wow fadeInUp" data-wow-delay="0.75s">
+          <a href="service.html?service=cargo-handling" class="service-link">
+            <div class="icon-box">
+              <img src="NewImage/icon-service-4.svg" alt="Cargo & Logistics">
+            </div>
+            <div class="service-content">
+              <h3>Cargo & Logistics</h3>
+              <p>Secure handling and reliable delivery of goods across key routes — with clear updates and careful coordination.</p>
+              <span class="service-meta">Ideal for: deliveries, project logistics, urgent runs</span>
+            </div>
+            <div class="service-footer">
+              <img src="images/arrow-white.svg" alt="View service">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer CTA -->
+      <div class="col-lg-12">
+        <div class="services-box-footer wow fadeInUp" data-wow-delay="1s">
+          <p>
+            Not sure what to choose? Tell us your route, time and passengers — we’ll recommend the best vehicle.
+          </p>
+
+          <div class="services-cta">
+            <a href="service.html" class="btn-default">View All Services</a>
+            <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20a%20quick%20quote.%0AService%3A%20%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20%0ALuggage%3A%20"
+               target="_blank" class="btn-default btn-highlighted">
+              Quick Quote on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* Services link: remove inline styles */
+.service-link{
+  color: inherit;
+  text-decoration: none;
+  display:block;
+}
+
+/* Small “meta” line under each service */
+.service-meta{
+  display:block;
+  margin-top:10px;
+  font-size:13px;
+  opacity:0.85;
+}
+
+/* Footer CTA buttons spacing */
+.services-cta{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+</style>
+<!-- Our Services Section End -->
+
+
+
+<!-- Fleets & Luxury Collection Section Start -->
+<div class="fleets-luxury-section bg-section" id="fleet">
+    <div class="container-fluid">
+  
+      <div class="row section-row">
+        <div class="col-lg-12">
+          <div class="section-title">
+            <h3 class="wow fadeInUp">Our Fleet</h3>
+            <h2 class="text-anime-style-3" data-cursor="-opaque">
+              Choose the right vehicle for your trip
+            </h2>
+            <p class="wow fadeInUp" data-wow-delay="0.25s">
+              Executive rides, business-class comfort, group vans and VIP/protocol options — available for airport transfers, city travel, tours, events and more.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row no-gutters mt-5">
+        <div class="col-lg-12">
+          <div class="luxury-collection-box">
+  
+            <!-- Executive Vehicles -->
+            <div class="luxury-collection-item wow fadeInUp">
+              <div class="luxury-collection-image" data-cursor-text="View">
+                <a href="image-gallery.html#executive">
+                  <figure>
+                    <img src="NewImage/photo38.jpg" alt="Executive vehicle for airport and city travel">
+                  </figure>
+                </a>
+              </div>
+  
+              <div class="luxury-collection-title">
+                <h2>Executive Vehicles</h2>
+                <p class="fleet-meta">2–4 passengers • Airport & city travel • Comfortable & clean</p>
+                <a class="fleet-cta" target="_blank"
+                   href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book%20an%20Executive%20Vehicle.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20">
+                  Book Executive
+                </a>
+              </div>
+  
+              <div class="luxury-collection-btn">
+                <a href="image-gallery.html#executive" class="section-icon-btn">
+                  <img src="images/arrow-white.svg" alt="View fleet">
+                </a>
+              </div>
+            </div>
+  
+            <!-- Business Class Vehicles -->
+            <div class="luxury-collection-item wow fadeInUp" data-wow-delay="0.25s">
+              <div class="luxury-collection-image" data-cursor-text="View">
+                <a href="image-gallery.html#business">
+                  <figure>
+                    <img src="NewImage/photo36.jpg" alt="Business class vehicle for meetings and guests">
+                  </figure>
+                </a>
+              </div>
+  
+              <div class="luxury-collection-title">
+                <h2>Business Class</h2>
+                <p class="fleet-meta">2–4 passengers • Meetings & VIP guests • Premium comfort</p>
+                <a class="fleet-cta" target="_blank"
+                   href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book%20a%20Business%20Class%20Vehicle.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20">
+                  Book Business Class
+                </a>
+              </div>
+  
+              <div class="luxury-collection-btn">
+                <a href="image-gallery.html#business" class="section-icon-btn">
+                  <img src="images/arrow-white.svg" alt="View fleet">
+                </a>
+              </div>
+            </div>
+  
+            <!-- Tour & Group Vans -->
+            <div class="luxury-collection-item wow fadeInUp" data-wow-delay="0.5s">
+              <div class="luxury-collection-image" data-cursor-text="View">
+                <a href="image-gallery.html#group">
+                  <figure>
+                    <img src="NewImage/Photo_6.jpeg" alt="Tour and group transport van for 7 to 14 passengers">
+                  </figure>
+                </a>
+              </div>
+  
+              <div class="luxury-collection-title">
+                <h2>Tour & Group Vans</h2>
+                <p class="fleet-meta">7–14 passengers • Tours, events & group trips • Spacious luggage</p>
+                <a class="fleet-cta" target="_blank"
+                   href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book%20a%20Group%20Van.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20%0ALuggage%3A%20">
+                  Book Group Van
+                </a>
+              </div>
+  
+              <div class="luxury-collection-btn">
+                <a href="image-gallery.html#group" class="section-icon-btn">
+                  <img src="images/arrow-white.svg" alt="View fleet">
+                </a>
+              </div>
+            </div>
+  
+            <!-- VIP & Protocol -->
+            <div class="luxury-collection-item wow fadeInUp" data-wow-delay="0.75s">
+              <div class="luxury-collection-image" data-cursor-text="View">
+                <a href="image-gallery.html#vip">
+                  <figure>
+                    <img src="NewImage/Photo8.jpeg" alt="VIP and protocol vehicle for discreet premium travel">
+                  </figure>
+                </a>
+              </div>
+  
+              <div class="luxury-collection-title">
+                <h2>VIP & Protocol</h2>
+                <p class="fleet-meta">Discreet premium service • VIP guests • Events & protocols</p>
+                <a class="fleet-cta" target="_blank"
+                   href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20VIP%20%26%20Protocol%20Transport.%0AOccasion%3A%20%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0A">
+                  Request VIP Service
+                </a>
+              </div>
+  
+              <div class="luxury-collection-btn">
+                <a href="image-gallery.html#vip" class="section-icon-btn">
+                  <img src="images/arrow-white.svg" alt="View fleet">
+                </a>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+<style>
+    .fleet-meta{
+      margin-top: 8px;
+      font-size: 13px;
+      color: #fff;              /* small words white */
+      opacity: 0.9;
+    }
+    
+    .fleet-cta{
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      background: #000;         /* dark background */
+      border: 1px solid #000;
+      color: #fff;              /* white text */
+      transition: transform .2s ease, background .2s ease, border .2s ease;
+    }
+    
+    .fleet-cta:hover{
+      transform: translateY(-2px);
+      background: #ff3600;      /* your brand orange on hover */
+      border-color: #ff3600;
+      color: #fff;
+    }
+
+</style>
+  <!-- Fleets & Luxury Collection Section End -->
+
+
+<!-- How It Works Section Start -->
+<div class="how-it-work">
+    <div class="container">
+      <div class="row align-items-center">
+  
+        <!-- Content Column -->
+        <div class="col-lg-6">
+          <div class="how-work-content">
+  
+            <!-- Section Title -->
+            <div class="section-title">
+              <h3 class="wow fadeInUp">How It Works</h3>
+              <h2 class="text-anime-style-3" data-cursor="-opaque">
+                Book in minutes. Travel with confidence.
+              </h2>
+              <p class="wow fadeInUp" data-wow-delay="0.25s">
+                Whether you're booking for yourself, your family, a group, or your organization,
+                we keep the process clear, fast and professional — from first message to final drop-off.
+              </p>
+            </div>
+  
+            <!-- Accordion -->
+            <div class="how-work-accordion" id="workaccordion">
+  
+              <!-- Step 1 -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
+                <div class="icon-box">
+                  <img src="NewImage/icon-how-it-work-1.svg" alt="Choose Service">
+                </div>
+                <h2 class="accordion-header" id="workheading1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#workcollapse1" aria-expanded="true">
+                    1. Tell Us What You Need
+                  </button>
+                </h2>
+                <div id="workcollapse1" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <p>
+                      Share your pickup location, destination, date, time, number of passengers and any special requests.
+                      You can book via WhatsApp, phone call or our contact form.
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Step 2 -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.75s">
+                <div class="icon-box">
+                  <img src="NewImage/icon-how-it-work-2.svg" alt="Confirm Booking">
+                </div>
+                <h2 class="accordion-header" id="workheading2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#workcollapse2">
+                    2. We Confirm & Assign Your Vehicle
+                  </button>
+                </h2>
+                <div id="workcollapse2" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      We confirm availability, agree on pricing, and assign a clean vehicle with a professional driver.
+                      You receive clear communication before pickup.
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Step 3 -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="1s">
+                <div class="icon-box">
+                  <img src="NewImage/icon-how-it-work-3.svg" alt="Travel Safely">
+                </div>
+                <h2 class="accordion-header" id="workheading3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#workcollapse3">
+                    3. Relax — We Handle The Journey
+                  </button>
+                </h2>
+                <div id="workcollapse3" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      Our driver arrives on time, assists where needed, and ensures a smooth, safe and comfortable trip.
+                      We focus on punctuality, professionalism and peace of mind.
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+            <!-- Accordion End -->
+  
+            <!-- Inline CTA -->
+            <div class="mt-4">
+              <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20" 
+                 target="_blank" class="btn-default">
+                Start Booking Now
+              </a>
+            </div>
+  
+          </div>
+        </div>
+  
+        <!-- Image Column -->
+        <div class="col-lg-6">
+          <div class="how-work-image">
+            <figure class="reveal">
+              <img src="NewImage/Photo12.jpeg" alt="Professional Transport Process">
+            </figure>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <!-- How It Works Section End -->
+
+<!-- Why Choose Us Section Start -->
+<div class="why-choose-us">
+    <div class="container">
+  
+      <!-- Section Title -->
+      <div class="row section-row">
+        <div class="col-lg-12">
+          <div class="section-title">
+            <h3 class="wow fadeInUp">Why Choose Us</h3>
+            <h2 class="text-anime-style-3" data-cursor="-opaque">
+              Service standards that make bookings stress-free
+            </h2>
+            <p class="wow fadeInUp" data-wow-delay="0.25s">
+              Anyone can offer transport. We stand out through clean vehicles, vetted drivers, clear communication and dependable timing —
+              for everyday trips, airport transfers, group transport, corporate travel and cargo support.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row align-items-center">
+  
+        <!-- Left Column -->
+        <div class="col-lg-4 col-md-6">
+          <div class="why-choose-item wow fadeInUp">
+            <div class="icon-box">
+              <img src="NewImage/icon-why-choose-1.svg" alt="Wide fleet options">
+            </div>
+            <div class="why-choose-content">
+              <h3>Right Vehicle for Every Trip</h3>
+              <p>
+                Executive cars, business-class comfort, group vans and VIP/protocol options — matched to your route, passengers and luggage.
+              </p>
+            </div>
+          </div>
+  
+          <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
+            <div class="icon-box">
+              <img src="NewImage/icon-why-choose-2.svg" alt="Fast support and coordination">
+            </div>
+            <div class="why-choose-content">
+              <h3>Fast, Clear Communication</h3>
+              <p>
+                Quick responses via WhatsApp and phone, smooth coordination, and updates when needed — from inquiry to final drop-off.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Center Image -->
+        <div class="col-lg-4 col-md-12">
+          <div class="why-choose-image">
+            <figure class="reveal">
+              <img src="NewImage/Photo13.jpeg" alt="Professional transport service">
+            </figure>
+          </div>
+        </div>
+  
+        <!-- Right Column -->
+        <div class="col-lg-4 col-md-6">
+          <div class="why-choose-item wow fadeInUp">
+            <div class="icon-box">
+              <img src="NewImage/icon-why-choose-3.svg" alt="Convenient pickup and drop-off">
+            </div>
+            <div class="why-choose-content">
+              <h3>Convenient Pickup & Drop-Off</h3>
+              <p>
+                Airports, hotels, offices, homes, event venues and delivery points — we meet you where you are and keep timing dependable.
+              </p>
+            </div>
+          </div>
+  
+          <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
+            <div class="icon-box">
+              <img src="NewImage/icon-why-choose-4.svg" alt="Safety and reliability">
+            </div>
+            <div class="why-choose-content">
+              <h3>Safety-First, On-Time Service</h3>
+              <p>
+                Well-maintained vehicles, professional drivers and disciplined operations — focused on safety, comfort and punctuality.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- CTA (optional but powerful) -->
+      <div class="text-center mt-4">
+        <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book%20a%20service.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20" target="_blank" class="btn-default">
+          Get a Quick Quote
+        </a>
+      </div>
+  
+    </div>
+  </div>
+  <!-- Why Choose Us Section End -->
+
+<!-- ===== FAQ + CONTACT SECTION START ===== -->
+<div class="our-faqs bg-section faq-contact-section" id="faq">
+    <div class="container">
+      <div class="row align-items-center">
+  
+        <!-- LEFT: FAQ -->
+        <div class="col-lg-6">
+          <div class="our-faqs-content">
+  
+            <div class="section-title">
+              <h3 class="wow fadeInUp">FAQs</h3>
+              <h2 class="text-anime-style-3">
+                Quick answers before you book
+              </h2>
+              <p class="wow fadeInUp" data-wow-delay="0.25s">
+                If you don’t see your question here, just message us on WhatsApp — we’ll help fast.
+              </p>
+            </div>
+  
+            <!-- FAQ Accordion -->
+            <div class="our-faqs-accordion" id="faqsaccordion">
+  
+              <!-- FAQ 1 -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.25s">
+                <h2 class="accordion-header" id="faqheading1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#faqcollapse1" aria-expanded="true">
+                    How do I book and how fast do you respond?
+                  </button>
+                </h2>
+                <div id="faqcollapse1" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <p>
+                      You can book via WhatsApp, phone call, or the form here. Share your pickup, destination,
+                      date/time and passengers — we’ll confirm availability and pricing as fast as possible.
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ 2 -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
+                <h2 class="accordion-header" id="faqheading2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#faqcollapse2">
+                    Are your drivers trained and vetted?
+                  </button>
+                </h2>
+                <div id="faqcollapse2" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      Yes. Our drivers are licensed, experienced and trained for professional service.
+                      We take punctuality, customer care and safety seriously.
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ 3 -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.75s">
+                <h2 class="accordion-header" id="faqheading3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#faqcollapse3">
+                    Where do you operate?
+                  </button>
+                </h2>
+                <div id="faqcollapse3" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      We operate in Nairobi and offer countrywide service depending on your route.
+                      Tell us your locations and we’ll advise the best option.
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ 4 -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="1s">
+                <h2 class="accordion-header" id="faqheading4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#faqcollapse4">
+                    Can you handle group trips, events, or long-term work?
+                  </button>
+                </h2>
+                <div id="faqcollapse4" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      Absolutely. We support group transport, events, tours, recurring schedules, and long-term arrangements.
+                      We’ll plan it properly so everything runs smoothly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ 5 -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="1.25s">
+                <h2 class="accordion-header" id="faqheading5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#faqcollapse5">
+                    Do you also do cargo and deliveries?
+                  </button>
+                </h2>
+                <div id="faqcollapse5" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      Yes. We handle cargo support and deliveries depending on the type of item and route.
+                      Send the details and we’ll confirm the safest option.
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+  
+        <!-- RIGHT: FORM WITH BACKGROUND -->
+        <div class="col-lg-6">
+          <div class="form-background">
+  
+            <div class="contact-us-form wow fadeInUp">
+              <div class="contact-form-intro">
+                <h3>Request a Quote</h3>
+                <p>
+                  Tell us the basics — we’ll reply with the best vehicle option and pricing.
+                </p>
+              </div>
+  
+              <!-- WhatsApp Submit Form (works on GitHub Pages) -->
+              <form id="quoteForm">
+                <div class="row">
+  
+                  <div class="form-group col-md-6 mb-3">
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                  </div>
+  
+                  <div class="form-group col-md-6 mb-3">
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                  </div>
+  
+                  <div class="form-group col-md-6 mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                  </div>
+  
+                  <div class="form-group col-md-6 mb-3">
+                    <input type="text" class="form-control" id="phone" placeholder="Phone (WhatsApp preferred)" required>
+                  </div>
+  
+                  <div class="form-group col-md-12 mb-3">
+                    <select class="form-control" id="service" required>
+                      <option value="" selected disabled>Select Service</option>
+                      <option>Airport Transfers</option>
+                      <option>Vehicle Hire</option>
+                      <option>Corporate & Executive</option>
+                      <option>Group / Tour Transport</option>
+                      <option>Cargo & Logistics</option>
+                      <option>VIP & Protocol</option>
+                    </select>
+                  </div>
+  
+                  <div class="form-group col-md-12 mb-3">
+                    <textarea class="form-control" rows="4" id="message"
+                      placeholder="Pickup, destination, date/time, passengers, luggage (if any)"></textarea>
+                  </div>
+  
+                  <div class="col-lg-12 d-grid">
+                    <button type="submit" class="btn-default">Get My Quote on WhatsApp</button>
+                  </div>
+  
+                  <div class="col-lg-12 mt-3 text-center">
+                    <a href="tel:+254748039576" class="small" style="color:#111; text-decoration: underline;">
+                      Prefer a call? Tap to call +254 748 039 576
+                    </a>
+                  </div>
+  
+                </div>
+              </form>
+  
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <!-- ===== FAQ + CONTACT SECTION END ===== -->
+  
+  <script>
+  document.getElementById("quoteForm").addEventListener("submit", function(e){
+    e.preventDefault();
+  
+    const first = document.getElementById("firstName").value.trim();
+    const last = document.getElementById("lastName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const msg = document.getElementById("message").value.trim();
+  
+    const text =
+  `Hello Gabricon Solutions, I'd like a quote.
+  
+  Name: ${first} ${last}
+  Phone: ${phone}
+  Email: ${email}
+  Service: ${service}
+  Details: ${msg || "N/A"}`;
+  
+    const wa = "254748039576";
+    const url = `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+  });
+  </script>
+ <style>
+    /* SECTION SPACING */
+.faq-contact-section{
+    padding:100px 0;
+}
+
+/* RIGHT BACKGROUND IMAGE */
+.form-background{
+    position:relative;
+    padding:60px 40px;
+    border-radius:14px;
+    overflow:hidden;
+    background:url('NewImage/Photo27.jpg') center center/cover no-repeat;
+}
+
+/* DARK OVERLAY (so text is readable) */
+.form-background::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+    z-index:1;
+}
+
+/* FORM CARD */
+.contact-us-form{
+    position:relative;
+    z-index:2;
+    background:#ffffff;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* INPUT STYLE */
+.contact-us-form .form-control{
+    border:1px solid #ddd;
+    padding:12px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+.contact-us-form .form-control:focus{
+    border-color:#ff3600;
+    box-shadow:0 0 10px rgba(37,211,102,0.25);
+}
+
+/* BUTTON */
+.btn-default{
+    background: #ff3600;
+    color:#fff;
+    padding:12px 35px;
+    border:none;
+    border-radius:6px;
+    font-weight:600;
+}
+
+.btn-default:hover{
+    background:#ff3600;
+}
+ </style>
+
+<!-- Footer Start -->
+<footer class="main-footer footer-bg">
+    <div class="footer-overlay"></div>
+  
+    <div class="container footer-inner">
+      <div class="row">
+  
+        <!-- Brand / About -->
+        <div class="col-lg-4 col-md-6">
+          <div class="about-footer">
+            <div class="footer-logo">
+              <img src="NewImage/GabB.png" alt="Gabricon Solutions Logo">
+            </div>
+  
+            <p class="footer-text">
+              Gabricon Solutions offers reliable vehicle hire, airport transfers, group transport,
+              corporate & executive travel, and cargo support — delivered with clean vehicles,
+              professional drivers, and clear communication.
+            </p>
+  
+            <div class="footer-mini">
+              <span><strong>Fast booking:</strong> WhatsApp & phone</span>
+              <span><strong>Coverage:</strong> Nairobi + countrywide</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="service.html?service=vehicle-hire">Vehicle Hire</a></li>
+<li><a href="service.html?service=airport-transfers">Airport Transfers</a></li>
+<li><a href="service.html?service=corporate-travel">Corporate & Executive</a></li>
+<li><a href="service.html?service=group-tour-transport">Group & Tour Transport</a></li>
+<li><a href="service.html?service=cargo-handling">Cargo Handling</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Company -->
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-links">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="image-gallery.html#image-gallery">Gallery</a></li>
+              <li><a href="service.html#services">Our Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#faq">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Contact (Trust builder) -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-contact-card">
+            <h3>Contact</h3>
+  
+            <p class="footer-text">
+              Need a quote? Send your pickup, destination, date/time and passengers — we’ll reply quickly.
+            </p>
+  
+            <div class="footer-contact-list">
+              <a href="tel:+254748039576"><i class="fa-solid fa-phone"></i> +254 748 039 576</a>
+              <a href="https://wa.me/254748039576" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+              <!-- Later replace with domain email -->
+              <a href="mailto:info@gabriconsolutions.com"><i class="fa-solid fa-envelope"></i> info@gabriconsolutions.com</a>
+            </div>
+  
+            <div class="footer-cta">
+              <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20a%20quick%20quote.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20" target="_blank" class="btn-default">
+                Get a Quick Quote
+              </a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- Bottom -->
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-7">
+            <p class="mb-0">© 2026 Gabricon Solutions. All rights reserved.</p>
+          </div>
+  
+          <div class="col-lg-6 col-md-5">
+            <ul class="footer-social">
+              <!-- Only Facebook + TikTok -->
+              <li><a href="YOUR_FACEBOOK_LINK" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="YOUR_TIKTOK_LINK" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <style>
+    .footer-bg{
+      background: url('NewImage/Photo1.jpg') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      color: #fff;
+      padding: 70px 0 25px;
+    }
+    .footer-overlay{
+      position:absolute;
+      inset:0;
+      background: rgba(0,0,0,0.65);
+      z-index:1;
+    }
+    .footer-inner{
+      position: relative;
+      z-index:2;
+    }
+    .footer-logo img{
+      max-height: 70px;
+      width:auto;
+      object-fit:contain;
+      margin-bottom: 14px;
+    }
+    .footer-text{
+      opacity: 0.92;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .footer-mini{
+      margin-top: 14px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+    .footer-links h3,
+    .footer-contact-card h3{
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .footer-links ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .footer-links li{
+      margin: 10px 0;
+    }
+    .footer-links a{
+      color:#fff;
+      text-decoration:none;
+      opacity:0.9;
+      transition: opacity .2s ease, transform .2s ease;
+      display:inline-block;
+    }
+    .footer-links a:hover{
+      opacity:1;
+      transform: translateX(2px);
+      text-decoration: underline;
+    }
+    .footer-contact-card{
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      padding: 22px;
+      backdrop-filter: blur(6px);
+    }
+    .footer-contact-list{
+      margin-top: 14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .footer-contact-list a{
+      color:#fff;
+      text-decoration:none;
+      opacity:0.95;
+    }
+    .footer-contact-list i{
+      margin-right: 10px;
+    }
+    .footer-cta{
+      margin-top: 16px;
+    }
+    .footer-bottom{
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.22);
+    }
+    .footer-social{
+      display:flex;
+      gap:14px;
+      list-style:none;
+      justify-content:flex-end;
+      padding:0;
+      margin:0;
+    }
+    .footer-social a{
+      color:#fff;
+      font-size: 16px;
+      opacity: 0.9;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .footer-social a:hover{
+      opacity:1;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px){
+      .footer-social{ justify-content:flex-start; margin-top: 12px; }
+    }
+    </style>
+<!-- Footer End -->
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20"
+   class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- WhatsApp helper bubble -->
+<div class="wa-bubble" id="waBubble">
+    <button class="wa-close" id="waClose" aria-label="Close">×</button>
+  
+    <p class="wa-title"><strong>Hi 👋</strong> Need help booking?</p>
+    <p class="wa-sub">Tell us where you’re headed — we’ll handle the rest.</p>
+  
+    <a class="wa-bubble-cta"
+       href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20a%20quote.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20"
+       target="_blank">
+      Chat on WhatsApp
+    </a>
+  </div>
+
+<!-- Scroll-to-Top Button -->
+<div class="scroll-top-btn" id="scrollTopBtn" title="Back to Top">
+  <i class="fa-solid fa-arrow-up"></i>
+</div>
+
+<style>
+    /* WhatsApp Button */
+    .whatsapp-btn{
+      position: fixed;
+      bottom: 100px; 
+      right: 30px;
+      z-index: 9999;
+      background-color: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 30px;
+      box-shadow: 0 0 0 rgba(37, 211, 102, 0.7);
+      animation: whatsapp-glow 2s infinite;
+      transition: transform 0.3s ease;
+    }
+    
+    .whatsapp-btn:hover{
+      transform: scale(1.12);
+      animation-play-state: paused;
+    }
+    
+    @keyframes whatsapp-glow{
+      0%{ box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70%{ box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100%{ box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    
+    /* WhatsApp Bubble */
+    .wa-bubble{
+      position: fixed;
+      right: 30px;
+      bottom: 170px;
+      z-index: 9999;
+      background: #fff;
+      color:#111;
+      width: 220px;
+      border-radius: 14px;
+      padding: 12px 12px 10px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      display: none;
+    }
+    
+    .wa-bubble p{ margin:0; font-size:14px; }
+    .wa-bubble small{ display:block; margin-top:4px; opacity:0.75; }
+    
+    .wa-close{
+      position:absolute;
+      top:6px;
+      right:8px;
+      border:none;
+      background:transparent;
+      font-size:18px;
+      line-height:1;
+      cursor:pointer;
+      opacity:0.6;
+    }
+    .wa-close:hover{ opacity:1; }
+    
+    /* Scroll-to-top Button */
+    .scroll-top-btn{
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9999;
+      background-color: #000;
+      color: #fff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: none; /* IMPORTANT: start hidden */
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    .scroll-top-btn:hover{
+      transform: scale(1.1);
+    }
+    
+    @media (max-width: 480px){
+      .whatsapp-btn{ right:18px; }
+      .wa-bubble{ right:18px; bottom:160px; width: 200px; }
+      .scroll-top-btn{ right:18px; }
+    }
+    </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+      /* ========= Scroll-to-top ========= */
+      const scrollBtn = document.getElementById("scrollTopBtn");
+    
+      if (scrollBtn) {
+        window.addEventListener("scroll", function () {
+          scrollBtn.style.display = (window.scrollY > 300) ? "flex" : "none";
+        });
+    
+        scrollBtn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    
+      /* ========= WhatsApp bubble ========= */
+      const bubble = document.getElementById("waBubble");
+      const closeBtn = document.getElementById("waClose");
+    
+      // If bubble isn't on this page, stop gracefully
+      if (!bubble || !closeBtn) return;
+    
+      // Show ONCE PER VISIT
+      const key = "waBubbleClosedThisVisit";
+      if (sessionStorage.getItem(key) === "1") return;
+    
+      let hasScrolled = false;
+      let hasShown = false;
+    
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 250) hasScrolled = true;
+      });
+    
+      function showBubble() {
+        if (hasShown) return;
+        bubble.style.display = "block";
+        hasShown = true;
+      }
+    
+      // Show after 90 seconds if user is engaged (scrolled)
+      setTimeout(() => {
+        if (hasScrolled) showBubble();
+      }, 60000);
+    
+      // Also show when user reaches FAQ section (high intent)
+      const faqSection = document.getElementById("faq");
+      if (faqSection && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && hasScrolled) {
+              showBubble();
+            }
+          });
+        }, { threshold: 0.2 });
+    
+        observer.observe(faqSection);
+      }
+    
+      // Close bubble for this visit
+      closeBtn.addEventListener("click", function () {
+        bubble.style.display = "none";
+        sessionStorage.setItem(key, "1");
+      });
+    
+    });
+    </script>
+
+
+
+    <!-- Jquery Library File -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Jquery Ui Js File -->
+    <script src="js/jquery-ui.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="js/SplitText.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <!-- YTPlayer js File -->
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    <!-- Wow js file -->
+    <script src="js/wow.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/function.js"></script>
+	<script src="../../../demo.awaikenthemes.com/assets/js/theme-panel.js"></script>
+</body>
+
+</html>
