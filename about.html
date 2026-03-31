@@ -518,90 +518,6 @@
 </div>
 
 
-    <!-- Exclusive Partners Section Start --> 
-<div class="partners-slider">
-    <div class="partners-track">
-
-        <div class="partners-logo">
-            <img src="NewImage/ost.JPG" alt="">
-        </div>
-
-        <div class="partners-logo">
-            <img src="NewImage/ace.JPG" alt="">
-        </div>
-
-        <div class="partners-logo">
-            <img src="NewImage/jumeirah.JPG" alt="">
-        </div>
-
-        <!-- DUPLICATE logos for smooth loop -->
-        <div class="partners-logo">
-            <img src="NewImage/ost.JPG" alt="">
-        </div>
-
-        <div class="partners-logo">
-            <img src="NewImage/ace.JPG" alt="">
-        </div>
-
-        <div class="partners-logo">
-            <img src="NewImage/jumeirah.JPG" alt="">
-        </div>
-
-    </div>
-</div>
-<style>
-  /* Slider container */
-.partners-slider {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    margin-top: 40px;
-}
-
-/* Moving track */
-.partners-track {
-    display: flex;
-    width: calc(250px * 6); /* adjust based on number of logos */
-    animation: scroll 20s linear infinite;
-}
-
-/* Individual logo */
-.partners-logo {
-    width: 250px;
-    padding: 20px;
-    text-align: center;
-}
-
-.partners-logo img {
-    height: 60px;
-    object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: 0.3s;
-}
-
-.partners-logo:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-/* Animation */
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Pause on hover */
-.partners-slider:hover .partners-track {
-    animation-play-state: paused;
-}
-</style>
-<!-- Exclusive Partners Section End -->
-
     <!-- Vision Mission Section Start -->
 <div class="vision-mission">
     <div class="container">
@@ -872,6 +788,111 @@
             </a>
         </div>
 
+<!-- Exclusive Partners Section Start -->
+<div class="exclusive-partners bg-section">
+    <div class="container">
+
+        <!-- Section Header -->
+        <div class="row section-row">
+            <div class="col-lg-12">
+                <div class="section-title text-center">
+                    <h3 class="wow fadeInUp">Strategic Partnerships</h3>
+                    
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">
+                        Trusted by partners who value reliability and professionalism
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partners Slider -->
+        <div class="partners-slider">
+            <div class="partners-track">
+
+                <!-- Original Logos -->
+                <div class="partners-logo">
+                    <img src="NewImage/ost.JPG" alt="Partner logo">
+                </div>
+
+                <div class="partners-logo">
+                    <img src="NewImage/ace.JPG" alt="Partner logo">
+                </div>
+
+                <div class="partners-logo">
+                    <img src="NewImage/jumeirah.JPG" alt="Partner logo">
+                </div>
+
+                <!-- Duplicate Logos (for smooth infinite scroll) -->
+                <div class="partners-logo">
+                    <img src="NewImage/ost.JPG" alt="Partner logo duplicate">
+                </div>
+
+                <div class="partners-logo">
+                    <img src="NewImage/ace.JPG" alt="Partner logo duplicate">
+                </div>
+
+                <div class="partners-logo">
+                    <img src="NewImage/jumeirah.JPG" alt="Partner logo duplicate">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Exclusive Partners Section End -->
+<style>
+  /* Slider container */
+.partners-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Moving track */
+.partners-track {
+    display: flex;
+    width: calc(250px * 6); /* adjust based on number of logos */
+    animation: scroll 20s linear infinite;
+}
+
+/* Individual logo */
+.partners-logo {
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+}
+
+.partners-logo img {
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.partners-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover */
+.partners-slider:hover .partners-track {
+    animation-play-state: paused;
+}
+</style>
+<!-- Exclusive Partners Section End -->
      
 
 <!-- Footer Start -->
