@@ -1474,6 +1474,8 @@ header.main-header .header-sticky.active{
     text-align: center;
 }
 
+
+
 /************************************/
 /***    07. Perfect Fleets css    ***/
 /************************************/
@@ -2629,29 +2631,89 @@ header.main-header .header-sticky.active{
 /***     29. Image Gallery css    ***/
 /************************************/
 
-.page-gallery{
+.page-gallery {
 	padding: 100px 0 70px;
+	background: #fff;
 }
 
-.page-gallery-box .photo-gallery{
-	height: calc(100% - 30px);
-	margin-bottom: 30px;
+/* Optional wrapper styling */
+.page-gallery-box .photo-gallery {
+	margin-bottom: 25px;
+	height: auto; /* FIX: removed unstable calc() */
 }
 
-.page-gallery-box .photo-gallery a{
-	cursor: none;
+/* Link styling */
+.page-gallery-box .photo-gallery a {
+	cursor: pointer; /* FIX: better UX */
+	display: block;
+	position: relative;
+	text-decoration: none;
+	overflow: hidden;
+	border-radius: 20px;
 }
 
-.page-gallery-box .photo-gallery figure{
-	border-radius: 40px;
+/* Figure wrapper */
+.page-gallery-box .photo-gallery figure {
+	margin: 0;
+	border-radius: 20px;
+	overflow: hidden;
+	position: relative;
 }
 
-.page-gallery-box .photo-gallery img{
-	aspect-ratio: 1 / 0.92;
+/* IMAGE */
+.page-gallery-box .photo-gallery img {
+	width: 100%;
+	height: 260px;
 	object-fit: cover;
-	border-radius: 40px;
+	display: block;
+	border-radius: 20px;
+	transition: transform 0.4s ease, filter 0.4s ease;
 }
 
+/* Hover effect */
+.page-gallery-box .photo-gallery a:hover img {
+	transform: scale(1.05);
+	filter: brightness(0.9);
+}
+
+/* Optional overlay effect */
+.page-gallery-box .photo-gallery a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.15);
+	opacity: 0;
+	transition: 0.3s ease;
+}
+
+.page-gallery-box .photo-gallery a:hover::after {
+	opacity: 1;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+	.page-gallery {
+		padding: 80px 0 50px;
+	}
+}
+
+@media (max-width: 768px) {
+	.page-gallery-box .photo-gallery img {
+		height: 220px;
+		border-radius: 16px;
+	}
+
+	.page-gallery-box .photo-gallery a,
+	.page-gallery-box .photo-gallery figure {
+		border-radius: 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.page-gallery-box .photo-gallery img {
+		height: 200px;
+	}
+}
 
 /************************************/
 /***    31. Contact us Page css   ***/

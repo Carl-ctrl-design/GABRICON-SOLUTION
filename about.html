@@ -2,340 +2,387 @@
 <html lang="en-KE">
 
 <head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="Awaiken">
-	<!-- Page Title -->
-	<title>About Us | Gabricon Solution</title>
-	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="NewImage/Favic.png">
-	<!-- Google Fonts Css-->
-	<link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
-	<!-- Bootstrap Css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<!-- SlickNav Css -->
-	<link href="css/slicknav.min.css" rel="stylesheet">
-	<!-- Swiper Css -->
-	<link rel="stylesheet" href="css/swiper-bundle.min.css">
-	<!-- Font Awesome Icon Css-->
-	<link href="css/all.css" rel="stylesheet" media="screen">
-	<!-- Animated Css -->
-	<link href="css/animate.css" rel="stylesheet">
-	<!-- Magnific Popup Core Css File -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Mouse Cursor Css File -->
-	<link rel="stylesheet" href="css/mousecursor.css">
-	<!-- Main Custom Css -->
-	<link href="css/custom.css" rel="stylesheet" media="screen">
-    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>About Gabricon Solutions | Professional Transport and Logistics Kenya</title>
+  <meta name="description" content="Learn about Gabricon Solutions, Kenya's reliable vehicle hire, airport transfers, corporate transport and logistics company. Professional drivers, clean vehicles and dependable service across Nairobi and countrywide.">
+  <meta name="keywords" content="about Gabricon Solutions, transport company Kenya, vehicle hire Nairobi, airport transfers Kenya, corporate transport, logistics company Kenya, professional drivers Kenya">
+  <meta name="author" content="Gabricon Solutions">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.gabriconsolutions.com/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Gabricon Solutions | Professional Transport Kenya">
+  <meta property="og:description" content="Gabricon Solutions provides reliable vehicle hire, airport transfers, corporate transport and logistics across Kenya. Clean vehicles, vetted drivers and fast booking.">
+  <meta property="og:url" content="https://www.gabriconsolutions.com/about.html">
+  <meta property="og:image" content="https://www.gabriconsolutions.com/NewImage/gabricon_logo_600px.png">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:site_name" content="Gabricon Solutions">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Gabricon Solutions | Transport and Logistics Kenya">
+  <meta name="twitter:description" content="Professional vehicle hire, airport transfers and logistics across Kenya. Meet the Gabricon team.">
+  <meta name="twitter:image" content="https://www.gabriconsolutions.com/NewImage/gabricon_logo_600px.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="NewImage/Favic.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- CSS Libraries -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/slicknav.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link href="css/all.css" rel="stylesheet" media="screen">
+  <link href="css/animate.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/mousecursor.css">
+  <link href="css/custom.css" rel="stylesheet" media="screen">
+
+  <!-- Schema.org JSON-LD for About Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Gabricon Solutions",
+    "url": "https://www.gabriconsolutions.com/about.html",
+    "description": "Gabricon Solutions provides professional vehicle hire, airport transfers, corporate transport and logistics services across Kenya.",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Gabricon Solutions",
+      "description": "Reliable vehicle hire, airport transfers, corporate transport, group travel and cargo logistics across Kenya.",
+      "telephone": "+254748039576",
+      "email": "info@gabriconsolutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      },
+      "areaServed": "Kenya",
+      "knowsAbout": ["Vehicle Hire", "Airport Transfers", "Corporate Transport", "Group Transport", "Cargo Logistics", "VIP Protocol Transport"]
+    }
+  }
+  </script>
+
+  <!-- Active nav highlight -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentPage = window.location.pathname.split("/").pop() || "index.html";
+      document.querySelectorAll(".navbar-nav .nav-link").forEach(function (link) {
+        if (link.getAttribute("href") === currentPage) link.classList.add("active");
+      });
+    });
+  </script>
+
+  <style>
+    /* =============================================
+       ABOUT PAGE STYLES
+       All page-specific CSS embedded here
+    ============================================= */
+
+    /* ---- LOADER ---- */
+    .g-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #040401;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    .g-loader::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,54,0,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 75% 40%, rgba(255,255,255,0.04) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .g-loader-inner {
+      position: relative;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+    .g-loader-logo { width: 160px; height: auto; opacity: 0.95; }
+    .g-loader-ring { position: relative; width: 56px; height: 56px; }
+    .g-loader-ring svg { width: 56px; height: 56px; animation: loaderSpin 1.4s linear infinite; }
+    .g-loader-ring circle { fill: none; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 120; stroke-dashoffset: 80; stroke: #FF3600; }
+    @keyframes loaderSpin { to { transform: rotate(360deg); } }
+    .g-loader-text { font-family: "DM Sans", sans-serif; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; }
+    .g-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+    /* ---- PAGE HEADER ---- */
+    .page-header {
+      position: relative;
+      padding: 160px 0 100px;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .page-header-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(4,4,1,0.55) 0%, rgba(4,4,1,0.75) 60%, rgba(4,4,1,0.88) 100%);
+      z-index: 1;
+    }
+    .page-header .container { position: relative; z-index: 2; }
+    .page-header-box { text-align: center; max-width: 800px; margin: 0 auto; }
+    .page-breadcrumb {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 18px;
+    }
+    .page-breadcrumb a {
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .page-breadcrumb a:hover { opacity: 1; text-decoration: underline; }
+    .page-breadcrumb span { margin: 0 8px; opacity: 0.5; }
+    .page-header-box h1 {
+      font-size: clamp(32px, 5vw, 60px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .page-header-text {
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 680px;
+      margin: 0 auto 30px;
+    }
+    .page-header-cta {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ---- ABOUT PAGE ABOUT SECTION ---- */
+    .page-about-us { padding: 100px 0; }
+    .about-proof { margin: 18px 0 8px; }
+    .about-proof-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 18px;
+    }
+    .about-proof-list li {
+      background: rgba(4,4,1,0.05);
+      border: 1px solid rgba(4,4,1,0.1);
+      padding: 11px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #444;
+    }
+    .about-proof-list li strong {
+      color: #040401;
+      display: block;
+      margin-bottom: 2px;
+      font-size: 13px;
+    }
+    @media (max-width: 768px) { .about-proof-list { grid-template-columns: 1fr; } }
+
+    /* ---- VISION MISSION SECTION ---- */
+    .vision-mission { padding: 100px 0; background: #fff8f6; }
+    .vision-image figure img { width: 100%; height: 420px; object-fit: cover; border-radius: 16px; }
+    .vision-mission-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .vision-mission-list ul li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      font-size: 15px;
+      color: #444;
+      border-bottom: 1px solid #ececec;
+    }
+    .vision-mission-list ul li:last-child { border-bottom: none; }
+    .vision-mission-list ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #FF3600;
+    }
+    .our-projects-nav .nav-tabs {
+      border: none;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .our-projects-nav .nav-tabs .nav-link {
+      border: 2px solid #ececec;
+      border-radius: 100px;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #616161;
+      text-transform: capitalize;
+      background: transparent;
+      transition: all 0.25s ease;
+    }
+    .our-projects-nav .nav-tabs .nav-link.active,
+    .our-projects-nav .nav-tabs .nav-link:hover {
+      background: #FF3600;
+      border-color: #FF3600;
+      color: #fff;
+    }
+
+    /* ---- WHY CHOOSE US ---- */
+    .why-choose-us { padding: 100px 0; }
+
+    /* ---- PARTNERS SECTION ---- */
+    .exclusive-partners.bg-section { padding: 80px 50px; }
+    .partners-slider { overflow: hidden; position: relative; width: 100%; margin-top: 40px; }
+    .partners-track {
+      display: flex;
+      width: max-content;
+      animation: partnerScroll 18s linear infinite;
+    }
+    .partners-track:hover { animation-play-state: paused; }
+    .partners-logo { width: 200px; padding: 20px 30px; text-align: center; flex-shrink: 0; }
+    .partners-logo img {
+      height: 55px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.65;
+      transition: all 0.3s ease;
+    }
+    .partners-logo:hover img { filter: grayscale(0%); opacity: 1; }
+    @keyframes partnerScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (max-width: 767px) {
+      .exclusive-partners.bg-section { padding: 60px 20px; }
+      .partners-logo { width: 150px; padding: 15px 20px; }
+    }
+
+    /* ---- FOOTER ---- */
+    .site-footer { background: #040401; padding: 80px 0 0; }
+    .footer-logo img { width: 160px; margin-bottom: 20px; }
+    .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.75; margin-bottom: 20px; max-width: 280px; }
+    .footer-contact-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px; color: rgba(255,255,255,0.7); }
+    .footer-contact-item a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
+    .footer-contact-item a:hover { color: #FF3600; }
+    .footer-contact-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(255,54,0,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #FF3600; font-size: 13px; }
+    .footer-heading { font-family: "Epilogue", sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .footer-links-list { list-style: none; padding: 0; margin: 0; }
+    .footer-links-list li { margin-bottom: 10px; }
+    .footer-links-list li a { font-size: 14px; color: rgba(255,255,255,0.55); transition: color 0.2s ease, padding-left 0.2s ease; display: inline-block; }
+    .footer-links-list li a:hover { color: #FF3600; padding-left: 4px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 60px; padding: 24px 0; text-align: center; }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.35); margin: 0; }
+    .footer-whatsapp-cta { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #fff; border-radius: 100px; padding: 11px 22px; font-size: 14px; font-weight: 700; margin-top: 20px; transition: opacity 0.2s ease; }
+    .footer-whatsapp-cta:hover { opacity: 0.88; color: #fff; }
+
+    /* ---- WHATSAPP FLOAT ---- */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 9999; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,0.4); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .wa-float:hover { transform: scale(1.08); box-shadow: 0 10px 32px rgba(37,211,102,0.5); }
+    .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+    .wa-float-tooltip { position: absolute; right: 68px; background: #040401; color: #fff; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 8px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+    .wa-float:hover .wa-float-tooltip { opacity: 1; }
+
+    /* ---- SCROLL TOP ---- */
+    .scroll-top-btn { position: fixed; bottom: 94px; right: 28px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: #040401; border: 2px solid rgba(255,255,255,0.12); color: #fff; display: none; align-items: center; justify-content: center; font-size: 16px; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; }
+    .scroll-top-btn:hover { background: #FF3600; transform: translateY(-2px); }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 991px) {
+      .page-header { padding: 130px 0 80px; }
+      .vision-image figure img { height: 320px; }
+    }
+    @media (max-width: 575px) {
+      .page-header-cta { flex-direction: column; align-items: center; }
+      .page-header-cta .btn-default { margin-right: 0; }
+      .footer-heading { margin-top: 36px; }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ===== GABRICON LOADER: GPS PING ROUTE ===== -->
-<div class="preloader" id="preloader" aria-label="Loading">
-  <div class="preloader-card">
-    <img class="preloader-logo" src="NewImage/gabricon_logo_600px.png" alt="Gabricon Solutions Logo">
-
-    <div class="gps-wrap" aria-hidden="true">
-      <div class="map-grid"></div>
-
-      <!-- Route (SVG so it feels “real”) -->
-      <svg class="route-svg" viewBox="0 0 420 90" preserveAspectRatio="none">
-        <!-- faint base route -->
-        <path class="route-base"
-          d="M10,60 C70,20 120,85 180,45 C240,10 300,75 360,35 C385,22 402,28 410,30" />
-        <!-- animated route -->
-        <path class="route-draw"
-          d="M10,60 C70,20 120,85 180,45 C240,10 300,75 360,35 C385,22 402,28 410,30" />
-      </svg>
-
-      <!-- Start pin -->
-      <div class="pin pin-start">
-        <span class="pin-core"></span>
-        <span class="pin-pulse"></span>
-      </div>
-
-      <!-- End pin -->
-      <div class="pin pin-end">
-        <span class="pin-core"></span>
-        <span class="pin-pulse"></span>
-      </div>
-
-      <!-- Moving signal dot -->
-      <div class="signal-dot"></div>
+<!-- ===== LOADER ===== -->
+<div class="g-loader" id="pageLoader">
+  <div class="g-loader-inner">
+    <img class="g-loader-logo" src="NewImage/gabricon_logo_600px.png" alt="Gabricon Solutions">
+    <div class="g-loader-ring">
+      <svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="22"/></svg>
     </div>
-
-    <div class="preloader-text">
-      <div class="preloader-title">Routing your ride…</div>
-      <div class="preloader-sub">Securing driver & vehicle</div>
-    </div>
+    <div class="g-loader-text">Loading your experience</div>
   </div>
 </div>
-<!-- ===== /GABRICON LOADER ===== -->
-
-<style>/* ===== GPS ROUTE LOADER (UNIQUE) ===== */
-  .preloader{
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background: #070707;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity .6s ease, visibility .6s ease;
-  }
-  
-  /* subtle moving sheen */
-  .preloader::before{
-    content:"";
-    position:absolute;
-    inset:-40%;
-    background:
-      radial-gradient(circle at 30% 40%, rgba(255,54,0,0.18) 0%, rgba(255,54,0,0) 55%),
-      radial-gradient(circle at 70% 60%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 50%);
-    animation: sheen 2.2s ease-in-out infinite alternate;
-    filter: blur(0.5px);
-  }
-  
-  @keyframes sheen{
-    from{ transform: translate3d(-1.5%, -1%, 0) scale(1); opacity: .8; }
-    to{ transform: translate3d(1.5%, 1%, 0) scale(1.02); opacity: 1; }
-  }
-  
-  .preloader-card{
-    position: relative;
-    width: min(520px, 92vw);
-    padding: 26px 22px 22px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.10);
-    box-shadow: 0 24px 70px rgba(0,0,0,0.45);
-    backdrop-filter: blur(10px);
-    text-align:center;
-    overflow:hidden;
-  }
-  
-  .preloader-logo{
-    width: 170px;
-    height:auto;
-    opacity: .95;
-    transform: translateZ(0);
-  }
-  
-  /* Map / GPS area */
-  .gps-wrap{
-    position: relative;
-    margin: 18px auto 14px;
-    width: 100%;
-    height: 140px;
-    border-radius: 14px;
-    background: rgba(0,0,0,0.35);
-    border: 1px solid rgba(255,255,255,0.10);
-    overflow: hidden;
-  }
-  
-  /* “Map grid” */
-  .map-grid{
-    position:absolute;
-    inset:0;
-    background:
-      linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
-    background-size: 22px 22px;
-    opacity: .55;
-    transform: translateZ(0);
-  }
-  
-  /* Route SVG */
-  .route-svg{
-    position:absolute;
-    left: 6%;
-    top: 50%;
-    width: 88%;
-    height: 70px;
-    transform: translateY(-50%);
-  }
-  
-  .route-base{
-    fill: none;
-    stroke: rgba(255,255,255,0.16);
-    stroke-width: 3;
-    stroke-linecap: round;
-  }
-  
-  .route-draw{
-    fill: none;
-    stroke: rgba(255,54,0,0.95);
-    stroke-width: 3.2;
-    stroke-linecap: round;
-    stroke-dasharray: 520;
-    stroke-dashoffset: 520;
-    animation: drawRoute 1.35s ease-in-out infinite;
-    filter: drop-shadow(0 10px 16px rgba(255,54,0,0.18));
-  }
-  
-  @keyframes drawRoute{
-    0%   { stroke-dashoffset: 520; opacity: .65; }
-    55%  { opacity: 1; }
-    100% { stroke-dashoffset: 0; opacity: .9; }
-  }
-  
-  /* Pins */
-  .pin{
-    position:absolute;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    transform: translate(-50%,-50%);
-  }
-  
-  .pin-start{ left: 10%; top: 62%; }
-  .pin-end{ left: 90%; top: 38%; }
-  
-  .pin-core{
-    position:absolute;
-    inset:0;
-    border-radius: 50%;
-    background: #ff3600;
-    box-shadow: 0 14px 30px rgba(255,54,0,0.28);
-  }
-  
-  .pin-pulse{
-    position:absolute;
-    inset:-12px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,54,0,0.65);
-    animation: ping 1.25s ease-out infinite;
-  }
-  
-  @keyframes ping{
-    0%{ transform: scale(0.2); opacity: 0.0; }
-    20%{ opacity: 0.9; }
-    100%{ transform: scale(1.2); opacity: 0; }
-  }
-  
-  /* Moving signal dot (follows the route area visually) */
-  .signal-dot{
-    position:absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ffffff;
-    box-shadow: 0 12px 28px rgba(255,255,255,0.18);
-    left: 10%;
-    top: 62%;
-    animation: dotTravel 1.35s ease-in-out infinite;
-  }
-  
-  @keyframes dotTravel{
-    0%   { left: 10%; top: 62%; opacity: .7; transform: scale(0.95); }
-    35%  { left: 33%; top: 44%; opacity: 1; transform: scale(1.1); }
-    60%  { left: 58%; top: 58%; }
-    100% { left: 90%; top: 38%; opacity: .85; transform: scale(1); }
-  }
-  
-  /* Text */
-  .preloader-text{ margin-top: 6px; }
-  .preloader-title{
-    font-size: 15px;
-    font-weight: 800;
-    color: rgba(255,255,255,0.92);
-    letter-spacing: 0.2px;
-  }
-  .preloader-sub{
-    margin-top: 6px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.68);
-    font-weight: 600;
-  }
-  
-  /* Hide state */
-  .preloader.is-hidden{
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-  
-  /* Small screens */
-  @media (max-width: 576px){
-    .preloader-logo{ width: 150px; }
-    .gps-wrap{ height: 125px; }
-  }
-</style>
-
 <script>
-  (function(){
-    const loader = document.getElementById("preloader");
-    if(!loader) return;
-  
-    // Faster + cleaner: never let loader hang forever
-    const KILL_SWITCH_MS = 4500;
-  
-    function hideLoader(){
-      if(!loader || loader.classList.contains("is-hidden")) return;
+  (function () {
+    var loader = document.getElementById("pageLoader");
+    if (!loader) return;
+    function hide() {
+      if (loader.classList.contains("is-hidden")) return;
       loader.classList.add("is-hidden");
-      setTimeout(() => loader.remove(), 700);
+      setTimeout(function () { loader.remove(); }, 800);
     }
-  
-    // Main hide when everything is loaded
-    window.addEventListener("load", () => {
-      // short “cinematic” pause so the animation feels intentional
-      setTimeout(hideLoader, 220);
-    });
-  
-    // Safety fallback
-    setTimeout(hideLoader, KILL_SWITCH_MS);
+    window.addEventListener("load", function () { setTimeout(hide, 300); });
+    setTimeout(hide, 4000);
   })();
-  </script>
-<!-- ===== GABRICON LOADER END ===== -->
+</script>
+<!-- ===== LOADER END ===== -->
 
-<!-- Header Start -->
-<header class="main-header">
-    <div class="header-sticky">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <!-- Logo Start -->
-                <a class="navbar-brand" href="index.html">
-                    <img src="NewImage/gabricon_logo_600px.png" alt="Logo">
-                </a>
-                <!-- Logo End -->
-
-                <!-- Main Menu Start -->
-                <div class="collapse navbar-collapse main-menu">
-                    <div class="nav-menu-wrapper">
-                        <ul class="navbar-nav mr-auto" id="menu">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About Gabricon</a></li>
-                            <li class="nav-item"><a class="nav-link" href="service.html">Our Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="image-gallery.html">Gallery</a></li>                        
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <!-- Let’s Start Button Start -->
-                    <div class="header-btn d-inline-flex">
-                        <a href="contact.html" class="btn-default">Lease our Vehicle</a>
-                    </div>
-                    <!-- Let’s Start Button End -->
-                </div>
-                <!-- Main Menu End -->
-                <div class="navbar-toggle">
-                    <span class="menu-label">MENU</span>
-                    <span class="menu-bars"></span>
-                </div>
-            </div>
-        </nav>
-        <div class="responsive-menu"></div>
-    </div>
+<!-- ===== HEADER ===== -->
+<header class="main-header active-sticky-header">
+  <div class="header-sticky">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="NewImage/gabricon_logo_600px.png" alt="Gabricon Solutions Logo" width="150" height="auto">
+        </a>
+        <div class="collapse navbar-collapse main-menu">
+          <div class="nav-menu-wrapper">
+            <ul class="navbar-nav mr-auto" id="menu">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="service.html">Our Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="image-gallery.html">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="header-btn d-inline-flex">
+            <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book.%0AService%3A%20%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20" target="_blank" class="btn-default">Book Now</a>
+          </div>
+        </div>
+        <div class="navbar-toggle">
+          <span class="menu-label">MENU</span>
+          <span class="menu-bars"></span>
+        </div>
+      </div>
+    </nav>
+    <div class="responsive-menu"></div>
+  </div>
 </header>
-<!-- Header End -->
+<!-- ===== HEADER END ===== -->
 
 
 <!-- Page Header Start -->
@@ -349,29 +396,19 @@
         <div class="page-header-box">
 
           <div class="page-breadcrumb">
-            <a href="index.html">Home</a> <span>/</span> <span>About</span>
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>About Us</span>
           </div>
-
           <h1 class="text-anime-style-3" data-cursor="-opaque">
             About Gabricon Solutions
           </h1>
-
           <p class="page-header-text">
-            At Gabricon Solutions, we deliver dependable transport and logistics services 
-            designed for individuals, businesses and organizations. From airport transfers 
-            and executive travel to group transport and cargo support, we combine professional 
-            drivers, well-maintained vehicles and reliable coordination to make every journey 
-            smooth and stress-free.
+            Gabricon Solutions delivers dependable transport and logistics services for individuals, businesses and organizations across Kenya. From airport transfers and executive travel to group transport and cargo support, every trip is handled with professional drivers, well-maintained vehicles and reliable coordination.
           </p>
-
           <div class="page-header-cta">
-            <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20"
-               target="_blank" class="btn-default">
-              WhatsApp Booking
-            </a>
-            <a href="contact.html" class="btn-default btn-highlighted">
-              Request a Quote
-            </a>
+            <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20" target="_blank" class="btn-default">Book on WhatsApp</a>
+            <a href="contact.html" class="btn-default btn-highlighted">Request a Quote</a>
           </div>
 
         </div>
@@ -381,987 +418,1018 @@
 </div>
 <!-- Page Header End -->
 
-<style>
-    .page-breadcrumb{
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  margin-bottom: 14px;
-  color: rgba(255,255,255,0.85);
-}
-
-.page-breadcrumb a{
-  color: #ffffff;
-  text-decoration: none;
-  opacity: 0.9;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.page-breadcrumb a:hover{
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.page-breadcrumb span{
-  margin: 0 6px;
-  opacity: 0.7;
-}
-
-.page-header-sub{
-  margin-top: 16px;
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 1.65;
-  max-width: 750px;
-  color: #ffffff;
-  text-shadow: 0 8px 24px rgba(0,0,0,0.45);
-}
-/* Page header description text */
-.page-header-text{
-  color: #ffffff;        /* pure white */
-  max-width: 720px;
-  margin: 18px auto 26px;
-  font-size: 16px;
-  line-height: 1.7;
-  text-align: center;
-}
-</style>
-
-
-<!-- Page About Us Section Start -->
+<!-- ===== WHO WE ARE ===== -->
 <div class="about-us page-about-us">
-    <div class="container">
-        <div class="row align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
 
-            <!-- Images -->
-            <div class="col-lg-6">
-                <div class="about-image">
-            
-                    <!-- Image 1 -->
-                    <div class="about-img-1">
-                        <figure class="reveal">
-                            <img src="NewImage/Photo11.jpeg" alt="Gabricon fleet operations">
-                        </figure>
-                    </div>
-            
-                    <!-- Image 2 -->
-                    <div class="about-img-2">
-                        <figure class="reveal">
-                            <img src="NewImage/photo33.jpg" alt="Corporate transport services">
-                        </figure>
-                    </div>
-            
-                </div>
-            </div>
-            
+      <div class="col-lg-6">
+        <div class="about-image">
+          <div class="about-img-1">
+            <figure class="image-anime reveal">
+              <img src="NewImage/Photo11.jpeg" alt="Gabricon Solutions fleet operations Kenya">
+            </figure>
+          </div>
+          <div class="about-img-2">
+            <figure class="image-anime reveal">
+              <img src="NewImage/photo33.jpg" alt="Gabricon Solutions corporate transport services Nairobi">
+            </figure>
+          </div>
+        </div>
+      </div>
 
-            <!-- Content -->
-<div class="col-lg-6">
-    <div class="about-content">
-
-        <!-- Section Title -->
-        <div class="section-title">
-            <h3 class="wow fadeInUp">who we are</h3>
+      <div class="col-lg-6">
+        <div class="about-content">
+          <div class="section-title">
+            <h3 class="wow fadeInUp">Who We Are</h3>
             <h2 class="text-anime-style-3" data-cursor="-opaque">
-                A professional transport and mobility solutions partner
+              A transport partner you can rely on, every single time
             </h2>
             <p class="wow fadeInUp" data-wow-delay="0.25s">
-    Gabricon Solutions was built to deliver transport services that people can rely on without second-guessing.
-    From corporate travel and airport transfers to group mobility and cargo support, we focus on
-    clean vehicles, professional drivers, clear communication, and punctual execution.
-    Whether serving businesses, institutions, or private clients, our goal is simple —
-    make every journey smooth, safe, and well-managed.
-</p>
-        </div>
+              Gabricon Solutions was built on one straightforward principle: show up, show up on time, and do the job properly. From corporate travel and airport transfers to group mobility and cargo support, we focus on clean vehicles, professional drivers, clear communication and punctual execution. Whether we are serving a business, an NGO, or a private client, the standard never changes.
+            </p>
+          </div>
 
-        <!-- About Content Body -->
-        <div class="about-content-body">
+          <div class="about-proof wow fadeInUp" data-wow-delay="0.35s">
+            <ul class="about-proof-list">
+              <li><strong>Who We Serve</strong>Individuals, families, groups and organizations</li>
+              <li><strong>Coverage</strong>Nairobi plus countrywide operations</li>
+              <li><strong>Support</strong>Fast response via WhatsApp and phone</li>
+              <li><strong>Our Standard</strong>Safety, comfort and punctuality on every trip</li>
+            </ul>
+          </div>
 
-            <!-- Item 1 -->
+          <div class="about-content-body">
             <div class="about-trusted-booking wow fadeInUp" data-wow-delay="0.5s">
-                <div class="icon-box">
-                    <img src="NewImage/icon-about-trusted-1.svg" alt="">
-                </div>
-                <div class="trusted-booking-content">
-                    <h3>Professional fleet & experienced drivers</h3>
-                    <p>
-                      Our vehicles are maintained to high operational standards and operated by experienced,
-                      vetted drivers who understand punctuality, presentation, and passenger safety.
-                    </p>
-                </div>
+              <div class="icon-box">
+                <img src="NewImage/icon-about-trusted-1.svg" alt="Professional fleet and experienced drivers">
+              </div>
+              <div class="trusted-booking-content">
+                <h3>Professional Fleet and Experienced Drivers</h3>
+                <p>Our vehicles are maintained to high operational standards and operated by experienced, vetted drivers who understand punctuality, presentation and passenger safety.</p>
+              </div>
             </div>
-
-            <!-- Item 2 -->
             <div class="about-trusted-booking wow fadeInUp" data-wow-delay="0.75s">
-                <div class="icon-box">
-                    <img src="NewImage/icon-about-trusted-2.svg" alt="">
-                </div>
-                <div class="trusted-booking-content">
-                    <h3>Flexible solutions with nationwide reach</h3>
-<p>
-    From single bookings to long-term transport contracts, we provide flexible solutions
-    tailored to each client — operating across Nairobi and countrywide routes.
-</p>
-                </div>
+              <div class="icon-box">
+                <img src="NewImage/icon-about-trusted-2.svg" alt="Flexible solutions with nationwide reach">
+              </div>
+              <div class="trusted-booking-content">
+                <h3>Flexible Solutions with Nationwide Reach</h3>
+                <p>From single bookings to long-term transport contracts, we provide flexible solutions tailored to each client, operating across Nairobi and countrywide routes.</p>
+              </div>
             </div>
+          </div>
 
+          <div class="about-content-footer wow fadeInUp" data-wow-delay="1s">
+            <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20request%20a%20quote.%0AService%3A%20%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20" target="_blank" class="btn-default">Get a Quote on WhatsApp</a>
+            <a href="service.html" class="btn-default btn-highlighted">View All Services</a>
+          </div>
         </div>
-        <!-- About Content Body End -->        <!-- CTA Button -->
-        <div class="about-content-footer wow fadeInUp" data-wow-delay="0.5s" style="text-align:center; margin:30px 0;">
-            <a href="contact.html" class="btn-default" style="padding:12px 30px; font-size:1.1rem;">
-                Request a Quote
-            </a>
-        </div>
-
+      </div>
 
     </div>
+  </div>
 </div>
+<!-- ===== WHO WE ARE END ===== -->
 
-
-    <!-- Vision Mission Section Start -->
+<!-- ===== VISION MISSION APPROACH ===== -->
 <div class="vision-mission">
-    <div class="container">
-        <div class="row section-row">
-            <div class="col-lg-12">
-                <!-- Section Title Start -->
-                <div class="section-title">
-                    <h3 class="wow fadeInUp">vision & mission</h3>
-                    <h2 class="text-anime-style-3" data-cursor="-opaque">
-                      Reliability first. Every trip. Every time.
-                    </h2>
-                </div>
-                <!-- Section Title End -->
-            </div>
+  <div class="container">
+    <div class="row section-row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h3 class="wow fadeInUp">Vision and Mission</h3>
+          <h2 class="text-anime-style-3" data-cursor="-opaque">
+            Reliability first. Every trip. Every time.
+          </h2>
         </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-
-                <!-- Vision / Mission Navigation -->
-                <div class="our-projects-nav wow fadeInUp" data-wow-delay="0.25s">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision"
-                                type="button" role="tab" aria-selected="true">
-                                our vision
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission"
-                                type="button" role="tab" aria-selected="false">
-                                our mission
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="approach-tab" data-bs-toggle="tab" data-bs-target="#approach"
-                                type="button" role="tab" aria-selected="false">
-                                our approach
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Vision / Mission Navigation End -->
-
-                <!-- Vision Mission Content -->
-                <div class="vision-mission-box tab-content" id="myTabContent">
-
-                    <!-- OUR VISION -->
-                    <div class="our-vision-item tab-pane fade show active" id="vision" role="tabpanel">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="vision-mission-content">
-                                    <div class="section-title">
-                                        <h3 class="wow fadeInUp">our vision</h3>
-                                        <h2 class="text-anime-style-3" data-cursor="-opaque">
-                                            To become a trusted transport partner across Kenya
-                                        </h2>
-                                        <p class="wow fadeInUp" data-wow-delay="0.25s">
-                                          Our vision is to become the first name people trust for transport in Kenya —
-                                          whether it’s a simple airport drop-off, a corporate assignment, or a time-sensitive delivery.
-                                          We want to be known for punctual service, professional drivers, clean vehicles,
-                                          and communication that keeps clients confident from start to finish.
-                                        </p>
-                                    </div>
-
-                                    <div class="vision-mission-list wow fadeInUp" data-wow-delay="0.5s">
-                                        <ul>
-  <li>Be trusted for everyday and high-priority trips</li>
-  <li>Operate with safety, integrity, and professionalism</li>
-  <li>Grow sustainably while serving clients across Kenya</li>
-</ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="vision-image">
-                                    <figure class="image-anime reveal">
-                                        <img src="NewImage/Photo_6.jpeg" alt="Our Vision">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- OUR MISSION -->
-                    <div class="our-vision-item tab-pane fade" id="mission" role="tabpanel">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="vision-mission-content">
-                                    <div class="section-title">
-                                        <h3>our mission</h3>
-                                        <h2 data-cursor="-opaque">
-                                            Deliver dependable transport solutions every day
-                                        </h2>
-                                        <p>
-                                            Our mission is to provide well-managed transport services that support our
-                                            clients’ operations. We focus on maintaining quality vehicles, working with
-                                            trained and vetted drivers, and responding promptly to client needs across
-                                            corporate travel, airport transfers, group transport, and cargo handling.
-                                        </p>
-                                    </div>
-
-                                    <div class="vision-mission-list">
-                                        <ul>
-                                            <li>Provide safe, well-maintained vehicles and professional drivers</li>
-                                            <li>Ensure punctual service and clear communication</li>
-                                            <li>Build long-term partnerships with our clients</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="vision-image">
-                                    <figure class="image-anime reveal">
-                                        <img src="NewImage/Photo8.jpeg" alt="Our Mission">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- OUR APPROACH -->
-                    <div class="our-mission-item tab-pane fade" id="approach" role="tabpanel">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="vision-mission-content">
-                                    <div class="section-title">
-                                        <h3>our approach</h3>
-                                        <h2 data-cursor="-opaque">
-                                            Simple, professional, and client-focused
-                                        </h2>
-                                        <p>
-                                            We believe effective transport starts with understanding the client’s needs.
-                                            Every request is planned carefully — from selecting the right vehicle to
-                                            coordinating drivers and timelines. We communicate clearly, manage details
-                                            closely, and deliver exactly what we commit to.
-                                        </p>
-                                    </div>
-
-                                    <div class="vision-mission-list">
-                                        <ul>
-                                            <li>Understand the client’s requirements before proposing solutions</li>
-                                            <li>Assign the right vehicle and qualified personnel</li>
-                                            <li>Monitor service delivery from start to finish</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="vision-image">
-                                    <figure class="image-anime reveal">
-                                        <img src="NewImage/photo36.jpg" alt="Our Approach">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Vision Mission Content End -->
-
-            </div>
-        </div>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="our-projects-nav wow fadeInUp" data-wow-delay="0.25s">
+          <ul class="nav nav-tabs" id="visionTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button" role="tab" aria-selected="true">Our Vision</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" type="button" role="tab" aria-selected="false">Our Mission</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="approach-tab" data-bs-toggle="tab" data-bs-target="#approach" type="button" role="tab" aria-selected="false">Our Approach</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="vision-mission-box tab-content" id="visionTabContent">
+
+          <!-- VISION -->
+          <div class="our-vision-item tab-pane fade show active" id="vision" role="tabpanel">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="vision-mission-content">
+                  <div class="section-title">
+                    <h3 class="wow fadeInUp">Our Vision</h3>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">
+                      To become the first name people trust for transport in Kenya
+                    </h2>
+                    <p class="wow fadeInUp" data-wow-delay="0.25s">
+                      Whether it is a simple airport drop-off, a corporate assignment or a time-sensitive delivery, we want to be the company clients reach for without hesitation. Known for punctual service, professional drivers, clean vehicles and communication that keeps everyone confident from start to finish.
+                    </p>
+                  </div>
+                  <div class="vision-mission-list wow fadeInUp" data-wow-delay="0.5s">
+                    <ul>
+                      <li>Be trusted for everyday and high-priority trips across Kenya</li>
+                      <li>Operate with safety, integrity and professionalism on every assignment</li>
+                      <li>Grow sustainably while maintaining the quality our clients depend on</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="vision-image wow fadeInUp" data-wow-delay="0.3s">
+                  <figure class="image-anime reveal">
+                    <img src="NewImage/Photo_6.jpeg" alt="Gabricon Solutions vision, trusted transport across Kenya">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MISSION -->
+          <div class="our-vision-item tab-pane fade" id="mission" role="tabpanel">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="vision-mission-content">
+                  <div class="section-title">
+                    <h3>Our Mission</h3>
+                    <h2>Deliver dependable transport solutions every single day</h2>
+                    <p>
+                      Our mission is to provide well-managed transport services that genuinely support our clients' operations. We maintain quality vehicles, work with trained and vetted drivers, and respond promptly to client needs across corporate travel, airport transfers, group transport and cargo handling.
+                    </p>
+                  </div>
+                  <div class="vision-mission-list">
+                    <ul>
+                      <li>Provide safe, well-maintained vehicles with professional drivers on every trip</li>
+                      <li>Ensure punctual service and clear communication throughout every booking</li>
+                      <li>Build long-term partnerships built on trust, consistency and results</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="vision-image">
+                  <figure class="image-anime reveal">
+                    <img src="NewImage/Photo8.jpeg" alt="Gabricon Solutions mission, dependable transport Kenya">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- APPROACH -->
+          <div class="our-mission-item tab-pane fade" id="approach" role="tabpanel">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="vision-mission-content">
+                  <div class="section-title">
+                    <h3>Our Approach</h3>
+                    <h2>Simple, professional and always client-focused</h2>
+                    <p>
+                      Effective transport starts with understanding exactly what the client needs. Every request is planned carefully, from selecting the right vehicle to coordinating drivers and timelines. We communicate clearly, manage every detail and deliver exactly what we commit to, no surprises and no excuses.
+                    </p>
+                  </div>
+                  <div class="vision-mission-list">
+                    <ul>
+                      <li>Understand the client's requirements before proposing any solution</li>
+                      <li>Assign the right vehicle and qualified personnel for every assignment</li>
+                      <li>Monitor service delivery from first contact to final drop-off</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="vision-image">
+                  <figure class="image-anime reveal">
+                    <img src="NewImage/photo36.jpg" alt="Gabricon Solutions approach, professional transport Kenya">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- Vision Mission Section End -->
+<!-- ===== VISION MISSION END ===== -->
 
     
-    <!-- Why Choose Us Section Start --> 
+<!-- ===== WHY CHOOSE US ===== -->
 <div class="why-choose-us">
-    <div class="container">
-        <div class="row section-row">
-            <div class="col-lg-12">
-                <!-- Section Title Start -->
-                <div class="section-title">
-                    <h3 class="wow fadeInUp">why choose us</h3>
-                    <h2 class="text-anime-style-3" data-cursor="-opaque">
-                        Reliable transport solutions you can depend on
-                    </h2>
-                </div>
-                <!-- Section Title End -->
-            </div>
+  <div class="container">
+    <div class="row section-row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h3 class="wow fadeInUp">Why Choose Us</h3>
+          <h2 class="text-anime-style-3" data-cursor="-opaque">
+            Reliable transport that works for you, not against you
+          </h2>
+          <p class="wow fadeInUp" data-wow-delay="0.25s">
+            Anyone can offer transport. What makes Gabricon different is the standard we hold ourselves to on every trip. Clean vehicles, vetted drivers, fast communication and dependable timing, for airport transfers, corporate travel, group transport and cargo support across Kenya.
+          </p>
         </div>
-
-        <div class="row align-items-center">
-            <div class="col-lg-4 col-md-6 order-lg-1 order-md-1 order-1">
-                <!-- Why Choose Item Start -->
-                <div class="why-choose-item wow fadeInUp">
-                    <div class="icon-box">
-                        <img src="NewImage/icon-why-choose-1.svg" alt="">
-                    </div>
-                    <div class="why-choose-content">
-                        <h3>diverse and well-maintained fleet</h3>
-                        <p>
-                            We offer executive vehicles, business-class transport, VIP & protocol cars, tour vans,
-                            and cargo vehicles — all regularly serviced to ensure safety, comfort, and reliability.
-                        </p>
-                    </div>
-                </div>
-                <!-- Why Choose Item End -->
-
-                <!-- Why Choose Item Start -->
-                <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
-                    <div class="icon-box">
-                        <img src="NewImage/icon-why-choose-2.svg" alt="">
-                    </div>
-                    <div class="why-choose-content">
-                        <h3>professional and responsive service</h3>
-                        <p>
-                            Our team prioritizes clear communication, quick response times, and personalized support
-                            to ensure every booking runs smoothly from start to finish.
-                        </p>
-                    </div>
-                </div>
-                <!-- Why Choose Item End -->
-            </div>
-
-            <div class="col-lg-4 col-md-12 order-lg-2 order-md-3 order-2">
-                <div class="why-choose-image">
-                    <figure class="reveal">
-                        <img src="NewImage/Photo29.jpg" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 order-lg-3 order-md-2 order-3">
-                <!-- Why Choose Item Start -->
-                <div class="why-choose-item wow fadeInUp">
-                    <div class="icon-box">
-                        <img src="NewImage/icon-why-choose-3.svg" alt="">
-                    </div>
-                    <div class="why-choose-content">
-                        <h3>countrywide service coverage</h3>
-                        <p>
-                            We operate across Kenya, supporting corporate travel, airport transfers, group transport,
-                            and logistics needs wherever our clients operate.
-                        </p>
-                    </div>
-                </div>
-                <!-- Why Choose Item End -->
-
-                <!-- Why Choose Item Start -->
-                <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
-                    <div class="icon-box">
-                        <img src="NewImage/icon-why-choose-4.svg" alt="">
-                    </div>
-                    <div class="why-choose-content">
-                        <h3>reliability, safety & accountability</h3>
-                        <p>
-                            From trained drivers to strict safety standards, we focus on dependable service delivery
-                            that clients can trust for both daily operations and critical assignments.
-                        </p>
-                    </div>
-                </div>
-                <!-- Why Choose Item End -->
-            </div>
-        </div>
+      </div>
     </div>
-</div>
-<!-- Why Choose Us Section End -->
-        <!-- CTA Button -->
-        <div class="about-content-footer wow fadeInUp" data-wow-delay="0.5s" style="text-align:center; margin:30px 0;">
-            <a href="contact.html" class="btn-default" style="padding:12px 30px; font-size:1.1rem;">
-                Contact Us
-            </a>
-        </div>
 
-<!-- Exclusive Partners Section Start -->
+    <div class="row align-items-center">
+      <div class="col-lg-4 col-md-6 order-lg-1 order-md-1 order-1">
+        <div class="why-choose-item wow fadeInUp">
+          <div class="icon-box">
+            <img src="NewImage/icon-why-choose-1.svg" alt="Diverse well-maintained fleet">
+          </div>
+          <div class="why-choose-content">
+            <h3>Diverse and Well-Maintained Fleet</h3>
+            <p>Executive vehicles, business-class transport, VIP protocol cars, tour vans and cargo options. Every vehicle is regularly serviced to ensure safety, comfort and reliability on every trip.</p>
+          </div>
+        </div>
+        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
+          <div class="icon-box">
+            <img src="NewImage/icon-why-choose-2.svg" alt="Professional and responsive service">
+          </div>
+          <div class="why-choose-content">
+            <h3>Professional and Responsive Service</h3>
+            <p>Our team prioritizes clear communication, quick response times and personalized support to ensure every booking runs smoothly from first message to final drop-off.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 order-lg-2 order-md-3 order-2">
+        <div class="why-choose-image">
+          <figure class="image-anime reveal">
+            <img src="NewImage/Photo29.jpg" alt="Gabricon Solutions professional transport Kenya">
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 order-lg-3 order-md-2 order-3">
+        <div class="why-choose-item wow fadeInUp">
+          <div class="icon-box">
+            <img src="NewImage/icon-why-choose-3.svg" alt="Countrywide service coverage Kenya">
+          </div>
+          <div class="why-choose-content">
+            <h3>Countrywide Service Coverage</h3>
+            <p>We operate across Kenya, supporting corporate travel, airport transfers, group transport and logistics wherever our clients need us. Nairobi is our base and the whole country is our territory.</p>
+          </div>
+        </div>
+        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
+          <div class="icon-box">
+            <img src="NewImage/icon-why-choose-4.svg" alt="Reliability safety and accountability">
+          </div>
+          <div class="why-choose-content">
+            <h3>Reliability, Safety and Accountability</h3>
+            <p>From trained drivers to strict safety standards, we focus on dependable service that clients can trust for both daily operations and high-priority assignments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book.%0AService%3A%20%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20" target="_blank" class="btn-default">Book a Trip Now</a>
+    </div>
+  </div>
+</div>
+<!-- ===== WHY CHOOSE US END ===== -->
+
+
+<!-- ===== PARTNERS ===== -->
 <div class="exclusive-partners bg-section">
-    <div class="container">
-
-        <!-- Section Header -->
-        <div class="row section-row">
-            <div class="col-lg-12">
-                <div class="section-title text-center">
-                    <h3 class="wow fadeInUp">Strategic Partnerships</h3>
-                    
-                    <h2 class="text-anime-style-3" data-cursor="-opaque">
-                        Trusted by partners who value reliability and professionalism
-                    </h2>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row section-row">
+      <div class="col-lg-12">
+        <div class="section-title text-center">
+          <h3 class="wow fadeInUp">Strategic Partnerships</h3>
+          <h2 class="text-anime-style-3" data-cursor="-opaque">
+            Trusted by partners who value reliability and professionalism
+          </h2>
+          <p class="wow fadeInUp" data-wow-delay="0.25s">
+            We work with organizations and businesses that hold the same standards we do. These are some of the partners who trust Gabricon Solutions to keep their people and operations moving.
+          </p>
         </div>
-
-        <!-- Partners Slider -->
-        <div class="partners-slider">
-            <div class="partners-track">
-
-                <!-- Original Logos -->
-                <div class="partners-logo">
-                    <img src="NewImage/ost.JPG" alt="Partner logo">
-                </div>
-
-                <div class="partners-logo">
-                    <img src="NewImage/ace.JPG" alt="Partner logo">
-                </div>
-
-                <div class="partners-logo">
-                    <img src="NewImage/jumeirah.JPG" alt="Partner logo">
-                </div>
-
-                <div class="partners-logo">
-                    <img src="NewImage/Golden_Bit.jpeg" alt="Partner logo">
-                </div>
-
-                <!-- Duplicate Logos (for smooth infinite scroll) -->
-                <div class="partners-logo">
-                    <img src="NewImage/ost.JPG" alt="Partner logo duplicate">
-                </div>
-
-                <div class="partners-logo">
-                    <img src="NewImage/ace.JPG" alt="Partner logo duplicate">
-                </div>
-
-                <div class="partners-logo">
-                    <img src="NewImage/jumeirah.JPG" alt="Partner logo duplicate">
-                </div>
-
-                <div class="partners-logo">
-                    <img src="NewImage/Golden_Bit.jpeg" alt="Partner logo">
-                </div>
-
-            </div>
-        </div>
-
+      </div>
     </div>
+    <div class="partners-slider">
+      <div class="partners-track">
+        <div class="partners-logo"><img src="NewImage/ost.JPG" alt="OST partner of Gabricon Solutions"></div>
+        <div class="partners-logo"><img src="NewImage/ace.JPG" alt="ACE partner of Gabricon Solutions"></div>
+        <div class="partners-logo"><img src="NewImage/jumeirah.JPG" alt="Jumeirah partner of Gabricon Solutions"></div>
+        <div class="partners-logo"><img src="NewImage/Golden_Bit.jpeg" alt="Golden Bit partner of Gabricon Solutions"></div>
+        <div class="partners-logo"><img src="NewImage/ost.JPG" alt="OST partner"></div>
+        <div class="partners-logo"><img src="NewImage/ace.JPG" alt="ACE partner"></div>
+        <div class="partners-logo"><img src="NewImage/jumeirah.JPG" alt="Jumeirah partner"></div>
+        <div class="partners-logo"><img src="NewImage/Golden_Bit.jpeg" alt="Golden Bit partner"></div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- Exclusive Partners Section End -->
-<style>
-  /* Slider container */
-.partners-slider {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    margin-top: 40px;
-}
-
-/* Moving track */
-.partners-track {
-    display: flex;
-    width: calc(250px * 6); /* adjust based on number of logos */
-    animation: scroll 15s linear infinite;
-}
-
-/* Individual logo */
-.partners-logo {
-    width: 250px;
-    padding: 20px;
-    text-align: center;
-}
-
-.partners-logo img {
-    height: 60px;
-    object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: 0.3s;
-}
-
-.partners-logo:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-/* Animation */
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Pause on hover */
-.partners-slider:hover .partners-track {
-    animation-play-state: paused;
-}
-</style>
-<!-- Exclusive Partners Section End -->
+<!-- ===== PARTNERS END ===== -->
      
 
-<!-- Footer Start -->
+<!-- =========================================
+     FOOTER SECTION START
+========================================= -->
 <footer class="main-footer footer-bg">
-    <div class="footer-overlay"></div>
-  
-    <div class="container footer-inner">
-      <div class="row">
-  
-        <!-- Brand / About -->
-        <div class="col-lg-4 col-md-6">
-          <div class="about-footer">
-            <div class="footer-logo">
-              <img src="NewImage/GabB.png" alt="Gabricon Solutions Logo">
-            </div>
-  
-            <p class="footer-text">
-              Gabricon Solutions offers reliable vehicle hire, airport transfers, group transport,
-              corporate & executive travel, and cargo support — delivered with clean vehicles,
-              professional drivers, and clear communication.
-            </p>
-  
-            <div class="footer-mini">
-              <span><strong>Fast booking:</strong> WhatsApp & phone</span>
-              <span><strong>Coverage:</strong> Nairobi + countrywide</span>
-            </div>
+
+  <!-- Overlay -->
+  <div class="footer-overlay"></div>
+
+  <div class="container footer-inner">
+
+    <div class="row gy-5">
+
+      <!-- =========================
+           ABOUT / BRAND
+      ========================== -->
+      <div class="col-lg-4 col-md-6">
+
+        <div class="about-footer">
+
+          <div class="footer-logo">
+            <img src="NewImage/GabB.png" alt="Gabricon Solutions Logo">
           </div>
-        </div>
-  
-        <!-- Services -->
-        <div class="col-lg-2 col-md-6">
-          <div class="footer-links">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="service.html?service=vehicle-hire">Vehicle Hire</a></li>
-<li><a href="service.html?service=airport-transfers">Airport Transfers</a></li>
-<li><a href="service.html?service=corporate-travel">Corporate & Executive</a></li>
-<li><a href="service.html?service=group-tour-transport">Group & Tour Transport</a></li>
-<li><a href="service.html?service=cargo-handling">Cargo Handling</a></li>
-            </ul>
+
+          <p class="footer-text">
+            Gabricon Solutions offers reliable vehicle hire, airport transfers,
+            group transport, corporate & executive travel, and cargo support
+            delivered with clean vehicles, professional drivers,
+            and clear communication.
+          </p>
+
+          <div class="footer-mini">
+            <span>
+              <strong>Fast booking:</strong>
+              WhatsApp & Phone
+            </span>
+
+            <span>
+              <strong>Coverage:</strong>
+              Nairobi + Countrywide
+            </span>
           </div>
+
         </div>
-  
-        <!-- Company -->
-        <div class="col-lg-2 col-md-6">
-          <div class="footer-links">
-            <h3>Company</h3>
-            <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="image-gallery.html#image-gallery">Gallery</a></li>
-              <li><a href="service.html#services">Our Services</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="index.html#faqsaccordion">FAQs</a></li>
-            </ul>
-          </div>
-        </div>
-  
-        <!-- Contact (Trust builder) -->
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-contact-card">
-            <h3>Contact</h3>
-  
-            <p class="footer-text">
-              Need a quote? Send your pickup, destination, date/time and passengers — we’ll reply quickly.
-            </p>
-  
-            <div class="footer-contact-list">
-              <a href="tel:+254748039576"><i class="fa-solid fa-phone"></i> +254 748 039 576</a>
-              <a href="https://wa.me/254748039576" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
-              <!-- Later replace with domain email -->
-              <a href="mailto:info@gabriconsolutions.com"><i class="fa-solid fa-envelope"></i> info@gabriconsolutions.com</a>
-            </div>
-  
-            <div class="footer-cta">
-              <a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20a%20quick%20quote.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20" target="_blank" class="btn-default">
-                Get a Quick Quote
+
+      </div>
+
+      <!-- =========================
+           SERVICES
+      ========================== -->
+      <div class="col-lg-2 col-md-6">
+
+        <div class="footer-links">
+
+          <h3>Services</h3>
+
+          <ul>
+            <li>
+              <a href="service.html?service=vehicle-hire">
+                Vehicle Hire
               </a>
-            </div>
-          </div>
+            </li>
+
+            <li>
+              <a href="service.html?service=airport-transfers">
+                Airport Transfers
+              </a>
+            </li>
+
+            <li>
+              <a href="service.html?service=corporate-travel">
+                Corporate & Executive
+              </a>
+            </li>
+
+            <li>
+              <a href="service.html?service=group-tour-transport">
+                Group & Tour Transport
+              </a>
+            </li>
+
+            <li>
+              <a href="service.html?service=cargo-handling">
+                Cargo Handling
+              </a>
+            </li>
+          </ul>
+
         </div>
-  
+
       </div>
-  
-      <!-- Bottom -->
-      <div class="footer-bottom">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-md-7">
-            <p class="mb-0">© 2026 Gabricon Solutions. All rights reserved.</p>
-          </div>
-  
-          <div class="col-lg-6 col-md-5">
-            <ul class="footer-social">
-              <!-- Only Facebook + TikTok -->
-              <li><a href="YOUR_FACEBOOK_LINK" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-              <li><a href="YOUR_TIKTOK_LINK" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
-            </ul>
-          </div>
+
+      <!-- =========================
+           COMPANY LINKS
+      ========================== -->
+      <div class="col-lg-2 col-md-6">
+
+        <div class="footer-links">
+
+          <h3>Company</h3>
+
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="image-gallery.html#image-gallery">Gallery</a></li>
+            <li><a href="service.html#services">Our Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#faq">FAQs</a></li>
+          </ul>
+
         </div>
+
       </div>
-  
+
+      <!-- =========================
+           CONTACT CARD
+      ========================== -->
+      <div class="col-lg-4 col-md-6">
+
+        <div class="footer-contact-card">
+
+          <h3>Contact</h3>
+
+          <p class="footer-text">
+            Need a quote? Send your pickup location,
+            destination, date/time and number of passengers -
+            we’ll reply quickly.
+          </p>
+
+          <div class="footer-contact-list">
+
+            <a href="tel:+254748039576">
+              <i class="fa-solid fa-phone"></i>
+              +254 748 039 576
+            </a>
+
+            <a href="https://wa.me/254748039576" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+              Chat on WhatsApp
+            </a>
+
+            <a href="mailto:info@gabriconsolutions.com">
+              <i class="fa-solid fa-envelope"></i>
+              info@gabriconsolutions.com
+            </a>
+
+          </div>
+
+          <div class="footer-cta">
+
+            <a
+              href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20a%20quick%20quote.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20"
+              target="_blank"
+              class="btn-default"
+            >
+              Get a Quick Quote
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-  </footer>
-  <!-- Footer End -->
 
-  <style>
-    .footer-bg{
-      background: url('NewImage/Photo1.jpg') no-repeat center center;
-      background-size: cover;
-      position: relative;
-      color: #fff;
-      padding: 70px 0 25px;
-    }
-    .footer-overlay{
-      position:absolute;
-      inset:0;
-      background: rgba(0,0,0,0.65);
-      z-index:1;
-    }
-    .footer-inner{
-      position: relative;
-      z-index:2;
-    }
-    .footer-logo img{
-      max-height: 70px;
-      width:auto;
-      object-fit:contain;
-      margin-bottom: 14px;
-    }
-    .footer-text{
-      opacity: 0.92;
-      line-height: 1.7;
-      margin: 0;
-    }
-    .footer-mini{
-      margin-top: 14px;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      font-size: 13px;
-      opacity: 0.9;
-    }
-    .footer-links h3,
-    .footer-contact-card h3{
-      font-size: 18px;
-      margin-bottom: 16px;
-    }
-    .footer-links ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-    .footer-links li{
-      margin: 10px 0;
-    }
-    .footer-links a{
-      color:#fff;
-      text-decoration:none;
-      opacity:0.9;
-      transition: opacity .2s ease, transform .2s ease;
-      display:inline-block;
-    }
-    .footer-links a:hover{
-      opacity:1;
-      transform: translateX(2px);
-      text-decoration: underline;
-    }
-    .footer-contact-card{
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 14px;
-      padding: 22px;
-      backdrop-filter: blur(6px);
-    }
-    .footer-contact-list{
-      margin-top: 14px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .footer-contact-list a{
-      color:#fff;
-      text-decoration:none;
-      opacity:0.95;
-    }
-    .footer-contact-list i{
-      margin-right: 10px;
-    }
-    .footer-cta{
-      margin-top: 16px;
-    }
-    .footer-bottom{
-      margin-top: 40px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.22);
-    }
-    .footer-social{
-      display:flex;
-      gap:14px;
-      list-style:none;
-      justify-content:flex-end;
-      padding:0;
-      margin:0;
-    }
-    .footer-social a{
-      color:#fff;
-      font-size: 16px;
-      opacity: 0.9;
-      transition: opacity .2s ease, transform .2s ease;
-    }
-    .footer-social a:hover{
-      opacity:1;
-      transform: translateY(-2px);
-    }
-    @media (max-width: 768px){
-      .footer-social{ justify-content:flex-start; margin-top: 12px; }
-    }
-    </style>
-<!-- Footer End -->
+    <!-- =========================
+         FOOTER BOTTOM
+    ========================== -->
+    <div class="footer-bottom">
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20"
-   class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+      <div class="row align-items-center">
+
+        <div class="col-lg-6 col-md-7">
+          <p class="mb-0">
+            © 2026 Gabricon Solutions. All rights reserved.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+<!-- =========================================
+     FOOTER SECTION END
+========================================= -->
+
+<!-- =========================================
+     FLOATING WHATSAPP BUTTON
+========================================= -->
+<a
+  href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20to%20book.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20"
+  class="whatsapp-btn"
+  target="_blank"
+  title="Chat on WhatsApp"
+>
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<!-- WhatsApp helper bubble -->
+<!-- =========================================
+     WHATSAPP HELP BUBBLE
+========================================= -->
 <div class="wa-bubble" id="waBubble">
-    <button class="wa-close" id="waClose" aria-label="Close">×</button>
-  
-    <p class="wa-title"><strong>Hi 👋</strong> Need help booking?</p>
-    <p class="wa-sub">Tell us where you’re headed — we’ll handle the rest.</p>
-  
-    <a class="wa-bubble-cta"
-       href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20a%20quote.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20"
-       target="_blank">
-      Chat on WhatsApp
-    </a>
-  </div>
 
-<!-- Scroll-to-Top Button -->
-<div class="scroll-top-btn" id="scrollTopBtn" title="Back to Top">
+  <button
+    class="wa-close"
+    id="waClose"
+    aria-label="Close"
+  >
+    ×
+  </button>
+
+  <p class="wa-title">
+    <strong>Hi 👋</strong> Need help booking?
+  </p>
+
+  <p class="wa-sub">
+    Tell us where you’re headed - we’ll handle the rest.
+  </p>
+
+  <a
+    class="wa-bubble-cta"
+    href="https://wa.me/254748039576?text=Hello%20Gabricon%20Solutions%2C%20I%27d%20like%20a%20quote.%0APickup%3A%20%0ADestination%3A%20%0ADate%2FTime%3A%20%0APassengers%3A%20"
+    target="_blank"
+  >
+    Chat on WhatsApp
+  </a>
+
+</div>
+
+<!-- =========================================
+     SCROLL TO TOP BUTTON
+========================================= -->
+<div
+  class="scroll-top-btn"
+  id="scrollTopBtn"
+  title="Back to Top"
+>
   <i class="fa-solid fa-arrow-up"></i>
 </div>
 
+<!-- =========================================
+     FOOTER + FLOATING UI STYLES
+========================================= -->
 <style>
-    /* WhatsApp Button */
+
+  /* =========================
+     FOOTER
+  ========================== */
+
+  .footer-bg{
+    background:
+      linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
+      url('NewImage/Photo1.jpg') center center/cover no-repeat;
+
+    position: relative;
+    color: #fff;
+    padding: 80px 0 30px;
+    overflow: hidden;
+  }
+
+  .footer-inner{
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-logo img{
+    max-height: 75px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 18px;
+  }
+
+  .footer-text{
+    line-height: 1.8;
+    opacity: 0.92;
+    margin: 0;
+  }
+
+  .footer-mini{
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .footer-links h3,
+  .footer-contact-card h3{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .footer-links ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li{
+    margin-bottom: 12px;
+  }
+
+  .footer-links a{
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.88;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .footer-links a:hover{
+    opacity: 1;
+    transform: translateX(4px);
+    text-decoration: underline;
+  }
+
+  .footer-contact-card{
+    background: rgba(20,20,20,0.65);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 25px;
+    backdrop-filter: blur(8px);
+  }
+
+  .footer-contact-list{
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-contact-list a{
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer-contact-list a:hover{
+    opacity: 0.8;
+  }
+
+  .footer-contact-list i{
+    margin-right: 10px;
+  }
+
+  .footer-cta{
+    margin-top: 22px;
+  }
+
+  .footer-bottom{
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* =========================
+     WHATSAPP BUTTON
+  ========================== */
+
+  .whatsapp-btn{
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    z-index: 9999;
+    text-decoration: none;
+    box-shadow: 0 0 0 rgba(37,211,102,0.7);
+    animation: whatsappGlow 2s infinite;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-btn:hover{
+    transform: scale(1.1);
+    color: #fff;
+  }
+
+  @keyframes whatsappGlow{
+    0%{
+      box-shadow: 0 0 0 0 rgba(37,211,102,0.7);
+    }
+
+    70%{
+      box-shadow: 0 0 0 18px rgba(37,211,102,0);
+    }
+
+    100%{
+      box-shadow: 0 0 0 0 rgba(37,211,102,0);
+    }
+  }
+
+  /* =========================
+     WHATSAPP BUBBLE
+  ========================== */
+
+  .wa-bubble{
+    position: fixed;
+    right: 30px;
+    bottom: 180px;
+    width: 240px;
+    background: #fff;
+    color: #111;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+    z-index: 9999;
+    display: none;
+  }
+
+  .wa-title{
+    margin-bottom: 6px !important;
+    font-size: 15px;
+  }
+
+  .wa-sub{
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 14px !important;
+    opacity: 0.85;
+  }
+
+  .wa-bubble-cta{
+    display: inline-block;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s ease;
+  }
+
+  .wa-bubble-cta:hover{
+    opacity: 0.9;
+    color: #fff;
+  }
+
+  .wa-close{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.6;
+  }
+
+  .wa-close:hover{
+    opacity: 1;
+  }
+
+  /* =========================
+     SCROLL TOP BUTTON
+  ========================== */
+
+  .scroll-top-btn{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 52px;
+    height: 52px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    font-size: 22px;
+    transition: transform 0.3s ease;
+  }
+
+  .scroll-top-btn:hover{
+    transform: scale(1.1);
+  }
+
+  /* =========================
+     MOBILE
+  ========================== */
+
+  @media (max-width: 768px){
+
+    .about-footer,
+    .footer-links,
+    .footer-contact-card{
+      margin-bottom: 30px;
+    }
+
     .whatsapp-btn{
-      position: fixed;
-      bottom: 100px; 
-      right: 30px;
-      z-index: 9999;
-      background-color: #25D366;
-      color: #fff;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size: 30px;
-      box-shadow: 0 0 0 rgba(37, 211, 102, 0.7);
-      animation: whatsapp-glow 2s infinite;
-      transition: transform 0.3s ease;
+      right: 18px;
     }
-    
-    .whatsapp-btn:hover{
-      transform: scale(1.12);
-      animation-play-state: paused;
-    }
-    
-    @keyframes whatsapp-glow{
-      0%{ box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70%{ box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-      100%{ box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
-    
-    /* WhatsApp Bubble */
+
     .wa-bubble{
-      position: fixed;
-      right: 30px;
-      bottom: 170px;
-      z-index: 9999;
-      background: #fff;
-      color:#111;
-      width: 220px;
-      border-radius: 14px;
-      padding: 12px 12px 10px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-      display: none;
+      right: 18px;
+      width: 210px;
+      bottom: 165px;
     }
-    
-    .wa-bubble p{ margin:0; font-size:14px; }
-    .wa-bubble small{ display:block; margin-top:4px; opacity:0.75; }
-    
-    .wa-close{
-      position:absolute;
-      top:6px;
-      right:8px;
-      border:none;
-      background:transparent;
-      font-size:18px;
-      line-height:1;
-      cursor:pointer;
-      opacity:0.6;
-    }
-    .wa-close:hover{ opacity:1; }
-    
-    /* Scroll-to-top Button */
+
     .scroll-top-btn{
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 9999;
-      background-color: #000;
-      color: #fff;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: none; /* IMPORTANT: start hidden */
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
-    
-    .scroll-top-btn:hover{
-      transform: scale(1.1);
-    }
-    
-    @media (max-width: 480px){
-      .whatsapp-btn{ right:18px; }
-      .wa-bubble{ right:18px; bottom:160px; width: 200px; }
-      .scroll-top-btn{ right:18px; }
+      right: 18px;
     }
 
-    .wa-title{
-  margin: 0 0 6px;
-  font-size: 14px;
-}
-.wa-sub{
-  margin: 0 0 10px;
-  font-size: 13px;
-  opacity: 0.75;
-  line-height: 1.35;
-}
-.wa-bubble-cta{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 10px;
-  background: #25D366;
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-}
-.wa-bubble-cta:hover{
-  opacity: 0.95;
-}
-    </style>
+  }
 
+</style>
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  
-    /* ========= Scroll-to-top ========= */
+
+  document.addEventListener("DOMContentLoaded", function(){
+
+    /* =========================
+       SCROLL TO TOP
+    ========================== */
+
     const scrollBtn = document.getElementById("scrollTopBtn");
-  
-    if (scrollBtn) {
-      window.addEventListener("scroll", function () {
-        scrollBtn.style.display = (window.scrollY > 300) ? "flex" : "none";
+
+    if(scrollBtn){
+
+      window.addEventListener("scroll", function(){
+
+        if(window.scrollY > 300){
+          scrollBtn.style.display = "flex";
+        }else{
+          scrollBtn.style.display = "none";
+        }
+
       });
-  
-      scrollBtn.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+
+      scrollBtn.addEventListener("click", function(){
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
       });
+
     }
-  
-    /* ========= WhatsApp bubble ========= */
+
+    /* =========================
+       WHATSAPP BUBBLE
+    ========================== */
+
     const bubble = document.getElementById("waBubble");
     const closeBtn = document.getElementById("waClose");
-    if (!bubble || !closeBtn) return;
-  
-    const key = "waBubbleClosedThisVisit";
-    if (sessionStorage.getItem(key) === "1") return;
-  
+
+    if(!bubble || !closeBtn) return;
+
+    const storageKey = "waBubbleClosedThisVisit";
+
+    if(sessionStorage.getItem(storageKey) === "1"){
+      return;
+    }
+
     let hasScrolled = false;
     let hasShown = false;
-  
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 250) hasScrolled = true;
+
+    window.addEventListener("scroll", function(){
+
+      if(window.scrollY > 250){
+        hasScrolled = true;
+      }
+
     });
-  
-    function showBubble() {
-      if (hasShown) return;
+
+    function showBubble(){
+
+      if(hasShown) return;
+
       bubble.style.display = "block";
       hasShown = true;
+
     }
-  
-    // Show after 90 seconds if user is engaged
-    setTimeout(() => {
-      if (hasScrolled) showBubble();
-    }, 90000);
-  
-    // Also show when user reaches footer contact card (works on every page)
-    const triggerSection = document.querySelector(".footer-contact-card");
-    if (triggerSection && "IntersectionObserver" in window) {
+
+    /* Show after 60 seconds if engaged */
+
+    setTimeout(function(){
+
+      if(hasScrolled){
+        showBubble();
+      }
+
+    }, 60000);
+
+    /* Show near FAQ section */
+
+    const faqSection = document.getElementById("faq");
+
+    if(faqSection && "IntersectionObserver" in window){
+
       const observer = new IntersectionObserver((entries) => {
+
         entries.forEach(entry => {
-          if (entry.isIntersecting && hasScrolled) showBubble();
+
+          if(entry.isIntersecting && hasScrolled){
+            showBubble();
+          }
+
         });
-      }, { threshold: 0.2 });
-  
-      observer.observe(triggerSection);
+
+      }, {
+        threshold: 0.2
+      });
+
+      observer.observe(faqSection);
+
     }
-  
-    closeBtn.addEventListener("click", function () {
+
+    /* Close Bubble */
+
+    closeBtn.addEventListener("click", function(){
+
       bubble.style.display = "none";
-      sessionStorage.setItem(key, "1");
+
+      sessionStorage.setItem(storageKey, "1");
+
     });
-  
+
   });
-  </script>
 
+</script>
 
-    <!-- Jquery Library File -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <!-- Jquery Ui Js File -->
-    <script src="js/jquery-ui.js"></script>
-    <!-- Bootstrap js file -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Validator js file -->
-    <script src="js/validator.min.js"></script>
-    <!-- SlickNav js file -->
-    <script src="js/jquery.slicknav.js"></script>
-    <!-- Swiper js file -->
-    <script src="js/swiper-bundle.min.js"></script>
-    <!-- Counter js file -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <!-- Magnific js file -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <!-- SmoothScroll -->
-    <script src="js/SmoothScroll.js"></script>
-    <!-- Parallax js -->
-    <script src="js/parallaxie.js"></script>
-    <!-- MagicCursor js file -->
-    <script src="js/gsap.min.js"></script>
-    <script src="js/magiccursor.js"></script>
-    <!-- Text Effect js file -->
-    <script src="js/SplitText.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <!-- YTPlayer js File -->
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
-    <!-- Wow js file -->
-    <script src="js/wow.js"></script>
-    <!-- Main Custom js file -->
-    <script src="js/function.js"></script>
-	<script src="../../../demo.awaikenthemes.com/assets/js/theme-panel.js"></script>
-</body>
+<!-- =========================================
+     JS FILES
+========================================= -->
 
-</html>
+<!-- Jquery -->
+<script src="js/jquery-3.7.1.min.js"></script>
+
+<!-- Jquery UI -->
+<script src="js/jquery-ui.js"></script>
+
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Validator -->
+<script src="js/validator.min.js"></script>
+
+<!-- SlickNav -->
+<script src="js/jquery.slicknav.js"></script>
+
+<!-- Swiper -->
+<script src="js/swiper-bundle.min.js"></script>
+
+<!-- Counter -->
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+
+<!-- Magnific Popup -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<!-- Smooth Scroll -->
+<script src="js/SmoothScroll.js"></script>
+
+<!-- Parallax -->
+<script src="js/parallaxie.js"></script>
+
+<!-- GSAP -->
+<script src="js/gsap.min.js"></script>
+
+<!-- Magic Cursor -->
+<script src="js/magiccursor.js"></script>
+
+<!-- Split Text -->
+<script src="js/SplitText.js"></script>
+
+<!-- Scroll Trigger -->
+<script src="js/ScrollTrigger.min.js"></script>
+
+<!-- YT Player -->
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+
+<!-- WOW -->
+<script src="js/wow.js"></script>
+
+<!-- Main JS -->
+<script src="js/function.js"></script>
+
+<!-- Theme Panel -->
+<script src="../../../demo.awaikenthemes.com/assets/js/theme-panel.js"></script>
